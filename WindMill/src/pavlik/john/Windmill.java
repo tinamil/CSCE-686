@@ -8,6 +8,7 @@ public class Windmill {
 	int[][]		adjacencyMatrix;
 	int[]		windspeed;
 	boolean[]	cities;
+	int			startCity;
 
 	int calculateFitness(boolean[] windmills, Integer[] route) {
 		int sum = 0;
@@ -21,6 +22,12 @@ public class Windmill {
 		return sum;
 	}
 
+	/**
+	 * Calculates the cost of the distance from the specified city to the closest windmill utilizing
+	 * Prim's Algorithm to generate a Minimum Spanning Tree with a termination condition of reaching
+	 * any node containing a windmill, then tracing parent pointers to only include the costs
+	 * directly between the city and the windmill.
+	 */
 	int calculateMST(int city, boolean[] windmills) {
 		List<Integer> reached = new ArrayList<>();
 		reached.add(city);
@@ -91,6 +98,7 @@ public class Windmill {
 
 	public static Windmill loadWindmill(String[] inputFile) {
 		Windmill newmill = new Windmill();
+		newmill.startCity = -1;
 		int linecount = 0;
 		for (String line : inputFile) {
 			if (line.startsWith("size:")) {
@@ -109,8 +117,9 @@ public class Windmill {
 				String[] words = line.split("\\s"); // Split on whitespace
 				if (words[0].equalsIgnoreCase("c")) {
 					newmill.cities[linecount] = true;
+					if (newmill.startCity == -1) newmill.startCity = linecount;
 				} else if (words[0].equalsIgnoreCase("e")) {
-
+					// Do nothing, not a city or windmill node
 				} else {
 					int wind = Integer.parseInt(words[0].split(":")[1].trim()); // w:int
 					newmill.windspeed[linecount] = wind;
