@@ -93,7 +93,11 @@ public class Windmill {
 			}
 			strings[i] = builder.toString();
 		}
-		return loadWindmill(strings);
+		Windmill mill = null;
+		while (mill == null){
+			mill = loadWindmill(strings);
+		}
+		return mill;
 	}
 
 	public static Windmill loadWindmill(String[] inputFile) {
@@ -129,6 +133,9 @@ public class Windmill {
 				}
 				linecount++;
 			}
+		}
+		if (newmill.startCity == -1) {
+			return null;
 		}
 		return newmill;
 	}

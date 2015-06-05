@@ -8,15 +8,15 @@ import java.util.Random;
 public class Main {
 
 	// Random Instance Generation Variables
-	static int		size			= 500;
+	static int		size			= 5;
 	static int		maxspeed		= 10;
-	static double	edgeChance		= .1;
+	static double	edgeChance		= 1;
 	static int		maxcost			= 5;
-	static double	cityChance		= .1;
+	static double	cityChance		= .5;
 	static double	windmillChance	= .5;
 
 	// Genetic Algorithm Variables
-	static int		populationSize	= 25;
+	static int		populationSize	= 10;
 	static int		iterations		= 50;
 	static Random	rand			= new Random();
 
@@ -27,6 +27,7 @@ public class Main {
 	public static void testGeneticAlgorithm() {
 		// Generate random problem
 		Windmill test = generateRandom();
+		Genetic.instance = test;
 		long start = System.currentTimeMillis();
 		Genetic bestSolution = null;
 
@@ -34,7 +35,7 @@ public class Main {
 		Genetic[] solutions = new Genetic[populationSize];
 		for (int i = 0; i < populationSize; ++i) {
 			boolean[] windmills = generateRandomWindmillSolution(test);
-			Genetic solution = new Genetic(test, windmills);
+			Genetic solution = new Genetic(windmills);
 			solutions[i] = solution;
 			solution.start();
 		}
@@ -66,7 +67,7 @@ public class Main {
 			// Replace the worst 20% of the solutions with new random solutions
 			for (int j = 0; j < (int) Math.round(populationSize * 0.2); ++j) {
 				boolean[] windmills = generateRandomWindmillSolution(test);
-				Genetic solution = new Genetic(test, windmills);
+				Genetic solution = new Genetic(windmills);
 				solutions[j] = solution;
 				solution.start();
 			}
@@ -98,7 +99,7 @@ public class Main {
 					}
 				}
 				// Randomly create a route to match the new windmill locations
-				Genetic child = new Genetic(test, newWindmills);
+				Genetic child = new Genetic(newWindmills);
 				solutions[j] = child;
 				child.start();
 			}
