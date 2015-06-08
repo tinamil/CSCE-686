@@ -8,17 +8,26 @@ import java.util.Random;
 public class Main {
 
 	// Random Instance Generation Variables
-	static int		size			= 5;
-	static int		maxspeed		= 10;
-	static double	edgeChance		= 1;
-	static int		maxcost			= 5;
-	static double	cityChance		= .5;
-	static double	windmillChance	= .5;
+	static final int	size								= 50;
+	static final int	maxspeed							= 10;
+	static final double	edgeChance							= .1;
+	static final int	maxcost								= 5;
+	static final double	cityChance							= .5;
+	static final double	windmillChance						= .5;
 
 	// Genetic Algorithm Variables
-	static int		populationSize	= 10;
-	static int		iterations		= 50;
-	static Random	rand			= new Random();
+	static final int	populationSize						= 20;
+	static final int	iterations							= 50;
+	static final Random	rand								= new Random();
+
+	// Ant algorithm variables
+	static final int	NUM_ANTS							= 25;
+	// The number of iterations of no improvement before giving up
+	static final int	CONVERGENCE							= 100;
+	// % of pheromone that is retained aftery each iteration
+	static final double	PHEROMONE_EVAPORATION_COEFFICIENT	= 0.9;
+	// Amount of pheromone to lay down after each iteration, will be divided by length of route
+	static final double	PHEROMONE_PLACEMENT					= 50;
 
 	public static void main(String[] args) {
 		testGeneticAlgorithm();
@@ -137,8 +146,12 @@ public class Main {
 	}
 
 	public static Windmill generateRandom() {
-		return Windmill.generateRandom(size, maxspeed, edgeChance, maxcost, cityChance,
-				windmillChance);
+		Windmill mill = null;
+		while (mill == null) {
+			mill = Windmill.generateRandom(size, maxspeed, edgeChance, maxcost, cityChance,
+					windmillChance);
+		}
+		return mill;
 	}
 
 	public static void testStaticAlgorithm() {

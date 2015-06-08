@@ -88,16 +88,13 @@ public class Windmill {
 			}
 			builder.append(" ");
 			for (int j = 0; j < size; ++j) {
-				builder.append(rand.nextDouble() < edgeChance ? "0" : rand.nextInt(maxcost - 1) + 1);
+				builder.append(rand.nextDouble() >= edgeChance ? "0"
+						: rand.nextInt(maxcost - 1) + 1);
 				builder.append(" ");
 			}
 			strings[i] = builder.toString();
 		}
-		Windmill mill = null;
-		while (mill == null){
-			mill = loadWindmill(strings);
-		}
-		return mill;
+		return loadWindmill(strings);
 	}
 
 	public static Windmill loadWindmill(String[] inputFile) {
@@ -130,6 +127,9 @@ public class Windmill {
 				}
 				for (int j = 1; j < words.length; ++j) {
 					newmill.adjacencyMatrix[linecount][j - 1] = Integer.parseInt(words[j]);
+					if(linecount == (j-1)) {
+						newmill.adjacencyMatrix[linecount][j-1] = 0;
+					}
 				}
 				linecount++;
 			}

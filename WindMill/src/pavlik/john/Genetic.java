@@ -33,7 +33,7 @@ public class Genetic extends Thread implements Comparable<Genetic> {
 	}
 
 	public Integer[] generateRandomSolution() {
-		int[][] uniformProbability = new int[instance.adjacencyMatrix.length][instance.adjacencyMatrix.length];
+		double[][] uniformProbability = new double[instance.adjacencyMatrix.length][instance.adjacencyMatrix.length];
 
 		for (int i = 0; i < uniformProbability.length; ++i) {
 			for (int j = 0; j < uniformProbability[i].length; ++i) {
@@ -54,8 +54,7 @@ public class Genetic extends Thread implements Comparable<Genetic> {
 	}
 
 	public Integer[] generateAntColonySolution() {
-		Long start = System.currentTimeMillis();
-		Ant[] ants = new Ant[Ant.NUM_ANTS];
+		Ant[] ants = new Ant[Main.NUM_ANTS];
 		// Initialize all pheromones to 1 for equal probabilities
 		for (int i = 0; i < Ant.pheromoneMatrix.length; ++i) {
 			for (int j = 0; j < Ant.pheromoneMatrix[i].length; ++j) {
@@ -64,14 +63,14 @@ public class Genetic extends Thread implements Comparable<Genetic> {
 		}
 		Integer[] shortestSolution = null;
 		long shortestSolutionLength = Long.MAX_VALUE;
-		int convergence = Ant.CONVERGENCE;
+		int convergence = Main.CONVERGENCE;
 		while (convergence-- > 0) {
 			// Begin finding a route using pheromone matrix
-			for (int i = 0; i < Ant.NUM_ANTS; ++i) {
+			for (int i = 0; i < Main.NUM_ANTS; ++i) {
 				ants[i] = new Ant(this);
 				ants[i].start();
 			}
-			for (int i = 0; i < Ant.NUM_ANTS; ++i) {
+			for (int i = 0; i < Main.NUM_ANTS; ++i) {
 				// Wait for each Ant to finish finding a route
 				try {
 					ants[i].join();
@@ -88,7 +87,7 @@ public class Genetic extends Thread implements Comparable<Genetic> {
 				}
 				// Check if this route is the global best
 				if (length < shortestSolutionLength || shortestSolution == null) {
-					convergence = Ant.CONVERGENCE;
+					convergence = Main.CONVERGENCE;
 					shortestSolutionLength = length;
 					shortestSolution = ants[i].antRoute;
 				}
@@ -96,30 +95,25 @@ public class Genetic extends Thread implements Comparable<Genetic> {
 				for (int j = 0; j < ants[i].antRoute.length - 1; ++j) {
 					Integer currentNode = ants[i].antRoute[j];
 					Integer nextNode = ants[i].antRoute[j + 1];
-					Ant.pheromoneMatrix[currentNode][nextNode] += 1 / length;
+					Ant.pheromoneMatrix[currentNode][nextNode] += Main.PHEROMONE_PLACEMENT / length;
 				}
 			}
-			// Evaporate all of the pheromone
+			// Evaporate all of the pheromone, not letting it go below 1.0 (at which point there is
+			// no effect from pheromones and it's pure heuristic)
 			for (int i = 0; i < Ant.pheromoneMatrix.length; ++i) {
 				for (int j = 0; j < Ant.pheromoneMatrix[i].length; ++j) {
-					Ant.pheromoneMatrix[i][j] *= Ant.pheromoneMatrix[i][j]
-							* Ant.PHEROMONE_EVAPORATION_COEFFICIENT;
+					Ant.pheromoneMatrix[i][j] = Math.max(1.0, Ant.pheromoneMatrix[i][j]
+							* Main.PHEROMONE_EVAPORATION_COEFFICIENT);
 				}
 			}
 		}
-		System.out.println("Ant Colony: " + ((System.currentTimeMillis() - start)/1000));
 		return shortestSolution;
 	}
 
 	private static class Ant extends Thread {
 		public Integer[]	antRoute;
-		static final int	NUM_ANTS							= 10;
-		// The number of iterations of no improvement before giving up
-		static final int	CONVERGENCE							= 10;
 		Genetic				parent;
-		// % of pheromone that is retained aftery each iteration
-		static final double	PHEROMONE_EVAPORATION_COEFFICIENT	= 0.95;
-		static int[][]		pheromoneMatrix						= new int[instance.adjacencyMatrix.length][instance.adjacencyMatrix.length];
+		static double[][]	pheromoneMatrix	= new double[instance.adjacencyMatrix.length][instance.adjacencyMatrix.length];
 
 		Ant(Genetic parent) {
 			this.parent = parent;
@@ -139,7 +133,7 @@ public class Genetic extends Thread implements Comparable<Genetic> {
 	 *            any given edge.
 	 * @return
 	 */
-	public Integer[] generateRouteSolution(int[][] probabilityMatrix) {
+	public Integer[] generateRouteSolution(double[][] probabilityMatrix) {
 		List<Integer> routeList = new ArrayList<>();
 		Set<Integer> windmillSet = new TreeSet<>();
 
@@ -165,37 +159,49 @@ public class Genetic extends Thread implements Comparable<Genetic> {
 					validRoutes.add(j);
 				}
 			}
+			if (validRoutes.isEmpty()) throw new RuntimeException(
+					"No valid routes from current node");
 			// Sum up the total probability number, which is a multiplication of the probability
 			// matrix and inverse of the cost
-			int totalProbability = 0;
+			double totalProbability = 0;
 			for (Integer nextNode : validRoutes) {
-				totalProbability += probabilityMatrix[current][nextNode]
-						* (1.0 / instance.adjacencyMatrix[current][nextNode]);
+				totalProbability += (probabilityMatrix[current][nextNode] * (1.0 / instance.adjacencyMatrix[current][nextNode]));
 			}
 			// Generate a uniform random number between 0 and 1.0 in order to choose a probability
 			double selectedProbability = rand.nextDouble();
 			// Check the probability of the current value, then subtract that from the selected
 			// probability and move onto the next value.
-			int nextNode = 0;
-			double currentProbability;
-			while (selectedProbability > (currentProbability = (probabilityMatrix[current][nextNode] * (1.0 / instance.adjacencyMatrix[current][nextNode]))
-					/ totalProbability)) {
+			double currentProbability = 0;
+			int nextNode;
+			int nextNodeIndex = 0;
+			do {
+				nextNode = validRoutes.get(nextNodeIndex++);
 				selectedProbability -= currentProbability;
-				nextNode += 1;
-			}
+				currentProbability = (probabilityMatrix[current][nextNode] * 1.0 / instance.adjacencyMatrix[current][nextNode])
+						/ totalProbability;
+			} while (selectedProbability > currentProbability && validRoutes.size() > nextNodeIndex);
 			// If that route creates a cycle without finding any progress in the interim,
 			// throw away the cycle
 			for (int i = progressMarker; i < routeList.size(); ++i) {
 				if (routeList.get(i) == nextNode) {
 					while (routeList.size() > i) {
+						if (routeList.size() > 1) {
+							int last = routeList.get(routeList.size() - 1);
+							int previous = routeList.get(routeList.size() - 2);
+							// If we are going in circles, reduce probability of that path
+							probabilityMatrix[previous][last] = Math.max(1.0,
+									probabilityMatrix[previous][last]
+											* Main.PHEROMONE_EVAPORATION_COEFFICIENT);
+						}
 						routeList.remove(routeList.size() - 1);
 					}
 				}
 			}
+			boolean firstMatch = !routeList.contains(nextNode);
 			routeList.add(nextNode);
 			// Mark progress so that we never backtrack by throwing away a cycle that included a
 			// node we needed
-			if (windmillSet.contains(nextNode)) {
+			if (windmillSet.contains(nextNode) && firstMatch) {
 				progressMarker = routeList.size() - 1;
 			}
 		} while (!routeList.containsAll(windmillSet)
