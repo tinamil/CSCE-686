@@ -30,12 +30,12 @@ public class Main {
 	static final double	PHEROMONE_PLACEMENT					= 50;
 
 	public static void main(String[] args) {
-		testGeneticAlgorithm();
+		stochasticGeneticAntSearch();
 	}
 
-	public static void testGeneticAlgorithm() {
+	public static void stochasticGeneticAntSearch() {
 		// Generate random problem
-		Windmill test = generateRandom();
+		Windmill test = generateRandomInstance();
 		Genetic.instance = test;
 		long start = System.currentTimeMillis();
 		Genetic bestSolution = null;
@@ -145,7 +145,7 @@ public class Main {
 		return windmills;
 	}
 
-	public static Windmill generateRandom() {
+	public static Windmill generateRandomInstance() {
 		Windmill mill = null;
 		while (mill == null) {
 			mill = Windmill.generateRandom(size, maxspeed, edgeChance, maxcost, cityChance,
@@ -154,29 +154,30 @@ public class Main {
 		return mill;
 	}
 
-	public static void testStaticAlgorithm() {
-		int size = 50;
-		Windmill test = generateRandom();
-		boolean[] windmills = new boolean[size];
-		List<Integer> routeList = new ArrayList<>();
-		int startCity = -1;
-		for (int i = 0; i < size; ++i) {
-			if (startCity == -1 && test.cities[i]) startCity = i;
-			if (test.windspeed[i] > 0) windmills[i] = true;
-			routeList.add(i);
-		}
-		routeList.add(startCity);
-		routeList.add(0, startCity);
-		System.out.println("Cost: "
-				+ test.calculateFitness(windmills, routeList.toArray(new Integer[0])));
+	public static void deterministicSearch() {
+		// Generate random problem
+		Windmill test = generateRandomInstance();
+		long start = System.currentTimeMillis();
+		DepthFirstAStar bestSolution = null;
+		
+		// Output best result
+		System.out.println("Cost: " + bestSolution.fitness);
 		System.out.print("Windmills: ");
+		StringBuilder windmills = new StringBuilder();
 		for (int i = 0; i < size; ++i) {
-			if (windmills[i]) System.out.print(i + " ");
+			if (bestSolution.windmills[i]) {
+				windmills.append(i);
+				windmills.append(" ");
+			}
 		}
-		System.out.println();
+		System.out.println(windmills.toString());
 		System.out.print("Route: ");
-		for (int i = 0; i < routeList.size(); ++i) {
-			System.out.print(routeList.get(i) + " ");
+		StringBuilder route = new StringBuilder();
+		for (int i = 0; i < bestSolution.route.length; ++i) {
+			route.append(bestSolution.route[i]);
+			route.append(" ");
 		}
+		System.out.println(route.toString());
+		System.out.println("Total time: " + ((System.currentTimeMillis() - start) / 1000));
 	}
 }
