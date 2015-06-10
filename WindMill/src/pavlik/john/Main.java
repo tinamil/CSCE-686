@@ -9,6 +9,7 @@ import java.util.TreeSet;
 
 /**
  * Run with LOTS of RAM, 10GB for a size 30 isn't always enough depending on the edges
+ * -Xmx10g
  * 
  * @author John
  *
