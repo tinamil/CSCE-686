@@ -85,7 +85,7 @@ public class DeterministicBestFirst {
 
 	public DeterministicBestFirst(Windmill instance) {
 		this.instance = instance;
-		bestWindmills = Main.generateRandomWindmillSolution(instance);
+		bestWindmills = Main.generateAllWindmillSolution(instance);
 		bestRoute = Arrays.asList(Main.generateRandomSolution(instance, bestWindmills));
 		bestFitness = instance.calculateFitness(bestWindmills, bestRoute.toArray(new Integer[0]));
 	}
@@ -101,8 +101,7 @@ public class DeterministicBestFirst {
 		// There are 2^n-1 possible windmill solutions (no windmills is not a valid solution because
 		// then powerline costs are infinity), every solution is unique and must be checked because
 		// adding a new windmill both adds and subtracts from the fitness function.
-		for(long i = 1; i < windmillSolutionSetSize; ++i){ //Count up
-		//for (long i = windmillSolutionSetSize - 1; i > 0; --i) { //Count down
+		for (long i = windmillSolutionSetSize - 1; i > 0; --i) { //Count down
 			System.out.println(i + " windmill sets remaining of " + windmillSolutionSetSize);
 			boolean[] windmills = new boolean[instance.windspeed.length];
 			long copy = i;
@@ -130,7 +129,7 @@ public class DeterministicBestFirst {
 
 	private State bestFirst(boolean[] windmills) {
 		int windmillFitness = instance.calculateFitness(windmills, new Integer[0]);
-		System.out.println("Starting windmill fitness: " + windmillFitness);
+		//System.out.println("Starting windmill fitness: " + windmillFitness);
 		Set<Integer> windmillSet = new TreeSet<>();
 
 		// Maintaining a java.util.Set of all the nodes where a Windmill is located, because this
@@ -167,8 +166,8 @@ public class DeterministicBestFirst {
 			// adding to the route will only make the fitness worse, if this route is too costly
 			// then all routes are too costly to beat the previous best and it
 			// is time to backtrack
-			if (windmillFitness - current.g < bestFitness) return null;
-
+			if (windmillFitness - current.f < bestFitness) return null;
+			//System.out.println("Estimated gap: " + (windmillFitness - current.f - bestFitness));
 			// If that solution is complete (i.e. it has all the cities and ends back at the start),
 			// then output and exit
 			if (current.cities.containsAll(windmillSet)

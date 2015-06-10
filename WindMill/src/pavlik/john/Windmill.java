@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import javax.naming.directory.InvalidAttributesException;
+
 public class Windmill {
 	int[][]		adjacencyMatrix;
 	int[]		windspeed;
@@ -127,6 +129,8 @@ public class Windmill {
 				}
 				for (int j = 1; j < words.length; ++j) {
 					newmill.adjacencyMatrix[linecount][j - 1] = Integer.parseInt(words[j]);
+					//Make it symmetric
+					newmill.adjacencyMatrix[j-1][linecount] = Integer.parseInt(words[j]); 
 					if(linecount == (j-1)) {
 						newmill.adjacencyMatrix[linecount][j-1] = 0;
 					}
@@ -138,5 +142,33 @@ public class Windmill {
 			return null;
 		}
 		return newmill;
+	}
+	
+	//Check to see if a minimum spanning tree can be generated touching every node
+	public boolean validate() throws InvalidAttributesException{
+		buildMST(startCity);
+		return true;
+	}
+	private void buildMST(Integer start) throws InvalidAttributesException{
+		List<Integer> reached = new ArrayList<>();
+		reached.add(start);
+		while (reached.size() < adjacencyMatrix.length) {
+			int cheapestEdgeCost = Integer.MAX_VALUE;
+			int cheapestEdgeIndexDestination = -1;
+			for (Integer node : reached) {
+				for (int j = 0; j < adjacencyMatrix.length; ++j) {
+					if (!reached.contains(j)) {
+						int cost = adjacencyMatrix[node][j];
+						if (cost > 0 && cost < cheapestEdgeCost) {
+							cheapestEdgeCost = cost;
+							cheapestEdgeIndexDestination = j;
+						}
+					}
+				}
+			}
+			if (cheapestEdgeIndexDestination == -1) throw new InvalidAttributesException(
+					"Graph has unreachable nodes");
+			reached.add(cheapestEdgeIndexDestination);
+		}
 	}
 }

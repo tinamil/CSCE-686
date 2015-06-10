@@ -7,9 +7,10 @@ import java.util.Random;
 import java.util.Set;
 import java.util.TreeSet;
 
+import javax.naming.directory.InvalidAttributesException;
+
 /**
- * Run with LOTS of RAM, 10GB for a size 30 isn't always enough depending on the edges
- * -Xmx10g
+ * Run with LOTS of RAM, 10GB for a size 30 isn't always enough depending on the edges -Xmx10g
  * 
  * @author John
  *
@@ -20,9 +21,9 @@ public class Main {
 	static final int	size								= 30;
 	static final int	maxspeed							= 10;
 	static final double	edgeChance							= .2;
-	static final int	maxcost								= 5;
+	static final int	maxcost								= 10;
 	static final double	cityChance							= .2;
-	static final double	windmillChance						= .5;
+	static final double	windmillChance						= .3;
 
 	// Genetic Algorithm Variables
 	static final int	populationSize						= 20;
@@ -39,8 +40,46 @@ public class Main {
 	static final double	PHEROMONE_PLACEMENT					= 50;
 
 	public static void main(String[] args) {
-
 		Windmill test = generateRandomInstance();
+		
+		System.out.println("Instance Size: " + size);
+		System.out.println("Max Speed: " + maxspeed);
+		System.out.println("Edge Chance: " + edgeChance);
+		System.out.println("Max Cost: " + maxcost);
+		System.out.println("City Chance: " + cityChance);
+		System.out.println("Windmill Chance: " + windmillChance);
+		System.out.println();
+		System.out.println("Genetic Size: " + populationSize);
+		System.out.println("Iterations: " + iterations);
+		System.out.println("Number of ants: " + NUM_ANTS);
+		System.out.println("Iterations without improvement: " + CONVERGENCE);
+		System.out.println("Pheromone Evaporation: " + PHEROMONE_EVAPORATION_COEFFICIENT);
+		System.out.println("Pheromone Placement: " + PHEROMONE_PLACEMENT);
+		System.out.println();
+		System.out.println("Adjacency Cost Matrix:");
+		for (int i = 0; i < test.adjacencyMatrix.length; ++i) {
+			for (int j = 0; j < test.adjacencyMatrix[i].length; ++j) {
+				System.out.print(test.adjacencyMatrix[i][j]);
+				System.out.print(" ");
+			}
+			System.out.println();
+		}
+		System.out.println();
+		System.out.println("Cities: ");
+		for (int i = 0; i < test.cities.length; ++i) {
+			if (test.cities[i]) {
+				System.out.print(i + " ");
+			}
+		}
+		System.out.println();
+		System.out.println();
+		System.out.println("Windspeeds: ");
+		for (int i = 0; i < test.windspeed.length; ++i) {
+			System.out.println(i + ": " + test.windspeed[i]);
+		}
+		System.out.println();
+		System.out.println("Starting City: " + test.startCity);
+
 		deterministicSearch(test);
 		stochasticGeneticAntSearch(test);
 	}
@@ -65,15 +104,19 @@ public class Main {
 			// Wait for all the solutions to finish calculating their fitness function
 
 			int average = 0;
+			int count = 0;
 			for (int j = 0; j < populationSize; ++j) {
 				try {
 					solutions[j].join();
-					average += solutions[j].fitness;
+					if (solutions[j].fitness > Integer.MIN_VALUE) {
+						average += solutions[j].fitness;
+						count += 1;
+					}
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
 			}
-			average /= populationSize;
+			average /= count;
 			// Sort the solutions into ascending order of fitness function
 			Arrays.sort(solutions);
 			System.out.println("Best: " + solutions[solutions.length - 1].fitness);
@@ -151,7 +194,15 @@ public class Main {
 	public static boolean[] generateRandomWindmillSolution(Windmill instance) {
 		boolean[] windmills = new boolean[size];
 		for (int i = 0; i < size; ++i) {
-			if (instance.windspeed[i] > 0 && rand.nextDouble() < windmillChance) windmills[i] = true;
+			windmills[i] = (instance.windspeed[i] > 0 && rand.nextDouble() < 0.5);
+		}
+		return windmills;
+	}
+
+	public static boolean[] generateAllWindmillSolution(Windmill instance) {
+		boolean[] windmills = new boolean[size];
+		for (int i = 0; i < size; ++i) {
+			windmills[i] = instance.windspeed[i] > 0;
 		}
 		return windmills;
 	}
@@ -161,6 +212,12 @@ public class Main {
 		while (mill == null) {
 			mill = Windmill.generateRandom(size, maxspeed, edgeChance, maxcost, cityChance,
 					windmillChance);
+			try {
+				mill.validate();
+			} catch (InvalidAttributesException e) {
+				e.printStackTrace();
+				mill = null;
+			}
 		}
 		return mill;
 	}
@@ -190,6 +247,7 @@ public class Main {
 		}
 		System.out.println(route.toString());
 		System.out.println("Total time: " + ((System.currentTimeMillis() - start) / 1000));
+		System.out.println();
 	}
 
 	public static Integer[] generateRandomSolution(Windmill instance, boolean[] windmills) {

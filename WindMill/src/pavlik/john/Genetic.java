@@ -25,7 +25,11 @@ public class Genetic extends Thread implements Comparable<Genetic> {
 	public void run() {
 		super.run();
 		route = generateAntColonySolution();
-		fitness = calculateFitness();
+		try {
+			fitness = calculateFitness();
+		} catch (RuntimeException e) {
+			fitness = Integer.MIN_VALUE;
+		}
 	}
 
 	public int calculateFitness() {
