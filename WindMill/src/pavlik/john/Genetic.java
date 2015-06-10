@@ -1,5 +1,6 @@
 package pavlik.john;
 
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -33,7 +34,7 @@ public class Genetic extends Thread implements Comparable<Genetic> {
 	}
 
 	public int calculateFitness() {
-		return instance.calculateFitness(windmills, route);
+		return instance.calculateFitness(windmills, Arrays.asList(route));
 	}
 
 	@Override
@@ -111,7 +112,7 @@ public class Genetic extends Thread implements Comparable<Genetic> {
 		@Override
 		public void run() {
 			super.run();
-			antRoute = Main.generateRouteSolution(instance, pheromoneMatrix, parent.windmills);
+			antRoute = Main.generateRouteSolution(instance, pheromoneMatrix, parent.windmills).toArray(new Integer[0]);
 		}
 	}
 }

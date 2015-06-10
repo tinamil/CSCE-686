@@ -12,14 +12,14 @@ public class Windmill {
 	boolean[]	cities;
 	int			startCity;
 
-	int calculateFitness(boolean[] windmills, Integer[] route) {
+	int calculateFitness(boolean[] windmills, List<Integer> route) {
 		int sum = 0;
 		for (int i = 0; i < windmills.length; ++i) {
 			if (windmills[i]) sum += windspeed[i];
 			if (cities[i]) sum -= calculateMST(i, windmills);
 		}
-		for (int i = 0; i < route.length - 1; ++i) {
-			sum -= adjacencyMatrix[route[i]][route[i + 1]];
+		for (int i = 0; i < route.size() - 1; ++i) {
+			sum -= adjacencyMatrix[route.get(i)][route.get(i+1)];
 		}
 		return sum;
 	}

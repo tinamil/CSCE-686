@@ -20,14 +20,14 @@ public class Main {
 	// Random Instance Generation Variables
 	static final int	size								= 30;
 	static final int	maxspeed							= 10;
-	static final double	edgeChance							= .2;
+	static final double	edgeChance							= .3;
 	static final int	maxcost								= 10;
 	static final double	cityChance							= .2;
-	static final double	windmillChance						= .3;
+	static final double	windmillChance						= .5;
 
 	// Genetic Algorithm Variables
 	static final int	populationSize						= 20;
-	static final int	iterations							= 50;
+	static final int	iterations							= 20;
 	static final Random	rand								= new Random();
 
 	// Ant algorithm variables
@@ -80,11 +80,11 @@ public class Main {
 		System.out.println();
 		System.out.println("Starting City: " + test.startCity);
 
-		deterministicSearch(test);
-		stochasticGeneticAntSearch(test);
+		Genetic solution = stochasticGeneticAntSearch(test);
+		deterministicSearch(test, solution.windmills, Arrays.asList(solution.route));
 	}
 
-	public static void stochasticGeneticAntSearch(Windmill instance) {
+	public static Genetic stochasticGeneticAntSearch(Windmill instance) {
 		// Generate random problem
 		Genetic.instance = instance;
 		long start = System.currentTimeMillis();
@@ -188,7 +188,7 @@ public class Main {
 		}
 		System.out.println(route.toString());
 		System.out.println("Total time: " + ((System.currentTimeMillis() - start) / 1000));
-
+		return bestSolution;
 	}
 
 	public static boolean[] generateRandomWindmillSolution(Windmill instance) {
@@ -222,35 +222,34 @@ public class Main {
 		return mill;
 	}
 
-	public static void deterministicSearch(Windmill instance) {
-		// Generate random problem
+	public static void deterministicSearch(Windmill instance, boolean[] windmills, List<Integer> route) {
 		long start = System.currentTimeMillis();
-		DeterministicBestFirst bestSolution = new DeterministicBestFirst(instance);
+		DeterministicBestFirst bestSolution = new DeterministicBestFirst(instance, windmills, route);
 		bestSolution.search();
 
 		// Output best result
 		System.out.println("Cost: " + bestSolution.bestFitness);
 		System.out.print("Windmills: ");
-		StringBuilder windmills = new StringBuilder();
+		StringBuilder windmillString = new StringBuilder();
 		for (int i = 0; i < size; ++i) {
 			if (bestSolution.bestWindmills[i]) {
-				windmills.append(i);
-				windmills.append(" ");
+				windmillString.append(i);
+				windmillString.append(" ");
 			}
 		}
-		System.out.println(windmills.toString());
+		System.out.println(windmillString.toString());
 		System.out.print("Route: ");
-		StringBuilder route = new StringBuilder();
+		StringBuilder routeString = new StringBuilder();
 		for (int i = 0; i < bestSolution.bestRoute.size(); ++i) {
-			route.append(bestSolution.bestRoute.get(i));
-			route.append(" ");
+			routeString.append(bestSolution.bestRoute.get(i));
+			routeString.append(" ");
 		}
-		System.out.println(route.toString());
+		System.out.println(routeString.toString());
 		System.out.println("Total time: " + ((System.currentTimeMillis() - start) / 1000));
 		System.out.println();
 	}
 
-	public static Integer[] generateRandomSolution(Windmill instance, boolean[] windmills) {
+	public static List<Integer> generateRandomSolution(Windmill instance, boolean[] windmills) {
 		double[][] uniformProbability = new double[instance.adjacencyMatrix.length][instance.adjacencyMatrix.length];
 
 		for (int i = 0; i < uniformProbability.length; ++i) {
@@ -268,7 +267,7 @@ public class Main {
 	 *            any given edge.
 	 * @return
 	 */
-	public static Integer[] generateRouteSolution(Windmill instance, double[][] probabilityMatrix,
+	public static List<Integer> generateRouteSolution(Windmill instance, double[][] probabilityMatrix,
 			boolean[] windmills) {
 		Random rand = new Random();
 		List<Integer> routeList = new ArrayList<>();
@@ -343,6 +342,6 @@ public class Main {
 			}
 		} while (!routeList.containsAll(windmillSet)
 				|| routeList.get(routeList.size() - 1) != instance.startCity);
-		return routeList.toArray(new Integer[0]);
+		return routeList;
 	}
 }
