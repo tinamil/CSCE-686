@@ -1,0 +1,116 @@
+Instance Size: 10
+Max Speed: 10
+Edge Chance: 1.0
+Max Cost: 10
+City Chance: 0.5
+Windmill Chance: 0.5
+
+GeneticState Size: 20
+Iterations: 20
+Number of ants: 25
+Iterations without improvement: 100
+Pheromone Evaporation: 0.9
+Pheromone Placement: 50.0
+
+Adjacency Cost Matrix:
+0 9 5 7 8 6 6 1 2 2 
+9 0 9 9 4 7 2 6 5 1 
+5 9 0 1 1 5 6 3 1 7 
+7 9 1 0 9 7 7 1 2 1 
+8 4 1 9 0 6 5 6 4 7 
+6 7 5 7 6 0 8 4 9 3 
+6 2 6 7 5 8 0 7 1 8 
+1 6 3 1 6 4 7 0 6 6 
+2 5 1 2 4 9 1 6 0 8 
+2 1 7 1 7 3 8 6 8 0 
+
+Cities: 
+0 1 3 7 9 
+
+Windspeeds: 
+0: 0
+1: 0
+2: 0
+3: 0
+4: 0
+5: 0
+6: 6
+7: 0
+8: 3
+9: 0
+
+Starting City: 0
+Generation 0
+Best: 3
+Average: -2
+Overall Best Solution: 3
+Generation 1
+Best: 3
+Average: -1
+Generation 2
+Best: 3
+Average: 0
+Generation 3
+Best: 3
+Average: 0
+Generation 4
+Best: 3
+Average: 1
+Generation 5
+Best: 3
+Average: 0
+Generation 6
+Best: 3
+Average: 1
+Generation 7
+Best: 3
+Average: 2
+Generation 8
+Best: 3
+Average: 2
+Generation 9
+Best: 3
+Average: 1
+Generation 10
+Best: 3
+Average: 1
+Generation 11
+Best: 3
+Average: 0
+Generation 12
+Best: 3
+Average: 2
+Generation 13
+Best: 3
+Average: 1
+Generation 14
+Best: 3
+Average: 2
+Generation 15
+Best: 3
+Average: 1
+Generation 16
+Best: 3
+Average: 2
+Generation 17
+Best: 3
+Average: 1
+Generation 18
+Best: 3
+Average: 1
+Generation 19
+Best: 3
+Average: 1
+Cost: 3
+Windmills: 6 8 
+Route: 0 8 6 8 0 
+Total time: 53
+Starting best fitness: 3
+1 of 3 windmill sets remaining
+2 of 3 windmill sets remaining
+3 of 3 windmill sets remaining
+Cost: 3
+Windmills: 6 8 
+Route: 0 8 6 8 0 
+Total time: 0
+

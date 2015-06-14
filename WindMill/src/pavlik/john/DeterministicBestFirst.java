@@ -1,6 +1,7 @@
 package pavlik.john;
 
 import java.util.ArrayList;
+import java.util.BitSet;
 import java.util.HashSet;
 import java.util.List;
 import java.util.PriorityQueue;
@@ -24,7 +25,7 @@ public class DeterministicBestFirst {
 			else return -1;
 		}
 
-		List<Integer>	unvisited;
+		BitSet	unvisited;
 		List<Integer>	cities;
 		Integer			progressMarker	= -1;
 
@@ -121,6 +122,7 @@ public class DeterministicBestFirst {
 		for (int i = 0; i < instance.windspeed.length; ++i) {
 			if (instance.windspeed[i] > 0) windmillCount += 1;
 		}
+
 		long windmillSolutionSetSize = Math.round(Math.pow(2, windmillCount));
 		// There are 2^n-1 possible windmill solutions (no windmills is not a valid solution because
 		// then powerline costs are infinity), every solution is unique and must be checked because
@@ -171,10 +173,9 @@ public class DeterministicBestFirst {
 		start.cities.add(instance.startCity);
 		start.progressMarker = 0;
 		start.g = 0;
-		start.unvisited = new ArrayList<>();
+		start.unvisited = new BitSet(instance.adjacencyMatrix.length);
 		for (int i = 0; i < instance.adjacencyMatrix.length; ++i) {
-			if (i != instance.startCity && instance.adjacencyMatrix[instance.startCity][i] > 0) start.unvisited
-					.add(i);
+			if (i != instance.startCity && instance.adjacencyMatrix[instance.startCity][i] > 0) start.unvisited.set(i);
 		}
 		start.h = estimate(start.cities, windmillSet);
 		start.f = start.g + start.h;
@@ -202,10 +203,11 @@ public class DeterministicBestFirst {
 			closed.add(current);
 
 			// Generate a neighbor instance for each city not yet visited in the current state
-			for (Integer n : current.unvisited) {
+			int index = -1;
+			while ((index = current.unvisited.nextSetBit(index+1)) != -1) {
 				State neighbor = new State(current);
-				boolean progress = windmillSet.contains(n) && !neighbor.cities.contains(n);
-				neighbor.cities.add(n);
+				boolean progress = windmillSet.contains(index) && !neighbor.cities.contains(index);
+				neighbor.cities.add(index);
 				if (progress) {
 					neighbor.progressMarker = neighbor.cities.size() - 1;
 				}
@@ -213,23 +215,23 @@ public class DeterministicBestFirst {
 				// Find all the nodes that can be reached from this new node, but that won't create
 				// a cycle since the last time progress was made (because creating such a cycle
 				// would mean an infinite search).
-				neighbor.unvisited = new ArrayList<>((int)Math.round(Main.size * Main.edgeChance));
+				neighbor.unvisited = new BitSet(instance.adjacencyMatrix.length);
 				Set<Integer> cycles = new HashSet<>();
 				for (int j = neighbor.progressMarker; j < neighbor.cities.size(); ++j) {
 					cycles.add(neighbor.cities.get(j));
 				}
 				for (int i = 0; i < instance.adjacencyMatrix.length; ++i) {
-					if (instance.adjacencyMatrix[n][i] > 0 && !cycles.contains(i)) {
-						neighbor.unvisited.add(i);
+					if (instance.adjacencyMatrix[index][i] > 0 && !cycles.contains(i)) {
+						neighbor.unvisited.set(i);
 					}
 				}
 				// Check if that neighbor is already in the closed set
-				if (closed.contains(n)) continue;
+				if (closed.contains(neighbor)) continue;
 
 				// Calculate the distance from the start city to the new city, and every city in
 				// between
 				double possible = current.g
-						+ instance.adjacencyMatrix[current.cities.get(current.cities.size() - 1)][n];
+						+ instance.adjacencyMatrix[current.cities.get(current.cities.size() - 1)][index];
 
 				neighbor.g = possible;
 				neighbor.h = estimate(neighbor.cities, windmillSet);

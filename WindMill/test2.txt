@@ -1,0 +1,196 @@
+Instance Size: 20
+Max Speed: 10
+Edge Chance: 1.0
+Max Cost: 10
+City Chance: 0.5
+Windmill Chance: 0.5
+
+GeneticState Size: 20
+Iterations: 20
+Number of ants: 25
+Iterations without improvement: 100
+Pheromone Evaporation: 0.9
+Pheromone Placement: 50.0
+
+Adjacency Cost Matrix:
+0 5 8 3 9 8 9 6 4 3 2 9 4 8 3 3 4 8 7 5 
+5 0 4 6 8 8 8 4 4 4 4 2 4 5 1 2 1 4 9 2 
+8 4 0 8 8 9 9 3 4 8 3 5 6 7 4 9 6 7 6 4 
+3 6 8 0 3 4 7 8 4 5 9 9 4 1 7 7 8 1 5 7 
+9 8 8 3 0 6 3 3 2 6 6 8 3 4 3 9 7 3 6 7 
+8 8 9 4 6 0 4 2 4 5 3 2 3 9 4 4 3 6 4 4 
+9 8 9 7 3 4 0 4 8 6 4 2 2 3 9 9 7 6 7 8 
+6 4 3 8 3 2 4 0 9 1 3 6 2 7 6 7 1 1 1 1 
+4 4 4 4 2 4 8 9 0 1 9 9 9 6 9 5 2 2 5 3 
+3 4 8 5 6 5 6 1 1 0 5 4 5 2 8 8 3 3 6 7 
+2 4 3 9 6 3 4 3 9 5 0 7 4 4 8 6 1 9 2 8 
+9 2 5 9 8 2 2 6 9 4 7 0 1 5 4 7 4 3 6 1 
+4 4 6 4 3 3 2 2 9 5 4 1 0 3 6 7 2 2 3 2 
+8 5 7 1 4 9 3 7 6 2 4 5 3 0 1 5 8 5 7 1 
+3 1 4 7 3 4 9 6 9 8 8 4 6 1 0 1 2 8 3 5 
+3 2 9 7 9 4 9 7 5 8 6 7 7 5 1 0 9 7 4 6 
+4 1 6 8 7 3 7 1 2 3 1 4 2 8 2 9 0 1 6 1 
+8 4 7 1 3 6 6 1 2 3 9 3 2 5 8 7 1 0 5 6 
+7 9 6 5 6 4 7 1 5 6 2 6 3 7 3 4 6 5 0 6 
+5 2 4 7 7 4 8 1 3 7 8 1 2 1 5 6 1 6 6 0 
+
+Cities: 
+0 1 9 12 13 18 19 
+
+Windspeeds: 
+0: 0
+1: 0
+2: 0
+3: 0
+4: 8
+5: 2
+6: 0
+7: 0
+8: 0
+9: 0
+10: 9
+11: 0
+12: 0
+13: 0
+14: 2
+15: 1
+16: 9
+17: 0
+18: 0
+19: 0
+
+Starting City: 0
+Generation 0
+Best: 15
+Average: -1
+Overall Best Solution: 15
+Generation 1
+Best: 14
+Average: 0
+Generation 2
+Best: 14
+Average: 3
+Generation 3
+Best: 15
+Average: 3
+Generation 4
+Best: 15
+Average: 8
+Generation 5
+Best: 15
+Average: 8
+Generation 6
+Best: 15
+Average: 10
+Generation 7
+Best: 15
+Average: 9
+Generation 8
+Best: 15
+Average: 9
+Generation 9
+Best: 15
+Average: 8
+Generation 10
+Best: 15
+Average: 10
+Generation 11
+Best: 15
+Average: 9
+Generation 12
+Best: 15
+Average: 7
+Generation 13
+Best: 15
+Average: 9
+Generation 14
+Best: 15
+Average: 9
+Generation 15
+Best: 15
+Average: 9
+Generation 16
+Best: 15
+Average: 11
+Generation 17
+Best: 15
+Average: 10
+Generation 18
+Best: 15
+Average: 8
+Generation 19
+Best: 15
+Average: 10
+Cost: 15
+Windmills: 4 10 14 15 16 
+Route: 0 10 16 8 4 14 15 0 
+Total time: 80
+Starting best fitness: 15
+1 of 63 windmill sets remaining
+2 of 63 windmill sets remaining
+3 of 63 windmill sets remaining
+4 of 63 windmill sets remaining
+5 of 63 windmill sets remaining
+6 of 63 windmill sets remaining
+7 of 63 windmill sets remaining
+8 of 63 windmill sets remaining
+9 of 63 windmill sets remaining
+10 of 63 windmill sets remaining
+11 of 63 windmill sets remaining
+12 of 63 windmill sets remaining
+13 of 63 windmill sets remaining
+14 of 63 windmill sets remaining
+15 of 63 windmill sets remaining
+16 of 63 windmill sets remaining
+17 of 63 windmill sets remaining
+18 of 63 windmill sets remaining
+19 of 63 windmill sets remaining
+20 of 63 windmill sets remaining
+21 of 63 windmill sets remaining
+22 of 63 windmill sets remaining
+23 of 63 windmill sets remaining
+24 of 63 windmill sets remaining
+25 of 63 windmill sets remaining
+26 of 63 windmill sets remaining
+27 of 63 windmill sets remaining
+28 of 63 windmill sets remaining
+29 of 63 windmill sets remaining
+30 of 63 windmill sets remaining
+31 of 63 windmill sets remaining
+32 of 63 windmill sets remaining
+33 of 63 windmill sets remaining
+34 of 63 windmill sets remaining
+35 of 63 windmill sets remaining
+36 of 63 windmill sets remaining
+37 of 63 windmill sets remaining
+38 of 63 windmill sets remaining
+39 of 63 windmill sets remaining
+40 of 63 windmill sets remaining
+41 of 63 windmill sets remaining
+42 of 63 windmill sets remaining
+43 of 63 windmill sets remaining
+44 of 63 windmill sets remaining
+45 of 63 windmill sets remaining
+46 of 63 windmill sets remaining
+47 of 63 windmill sets remaining
+48 of 63 windmill sets remaining
+49 of 63 windmill sets remaining
+50 of 63 windmill sets remaining
+51 of 63 windmill sets remaining
+52 of 63 windmill sets remaining
+53 of 63 windmill sets remaining
+54 of 63 windmill sets remaining
+55 of 63 windmill sets remaining
+56 of 63 windmill sets remaining
+57 of 63 windmill sets remaining
+58 of 63 windmill sets remaining
+59 of 63 windmill sets remaining
+60 of 63 windmill sets remaining
+61 of 63 windmill sets remaining
+62 of 63 windmill sets remaining
+63 of 63 windmill sets remaining
+Cost: 15
+Windmills: 4 10 14 15 16 
+Route: 0 10 16 8 4 14 15 0 
+Total time: 0
+

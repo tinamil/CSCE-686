@@ -1,0 +1,408 @@
+Instance Size: 28
+Max Speed: 10
+Edge Chance: 1.0
+Max Cost: 10
+City Chance: 0.5
+Windmill Chance: 0.5
+
+GeneticState Size: 20
+Iterations: 20
+Number of ants: 25
+Iterations without improvement: 100
+Pheromone Evaporation: 0.9
+Pheromone Placement: 50.0
+
+Adjacency Cost Matrix:
+0 8 9 2 1 9 4 5 9 8 5 8 3 5 2 7 2 2 7 1 3 5 4 8 3 2 8 1 
+8 0 1 4 6 4 4 3 4 6 9 1 8 1 6 7 9 6 2 5 1 5 8 4 1 2 9 9 
+9 1 0 2 8 9 9 9 2 6 5 7 9 6 8 3 9 3 9 9 8 6 9 1 3 6 1 8 
+2 4 2 0 1 9 5 5 9 9 5 8 1 7 1 5 6 6 2 8 5 5 1 6 4 8 7 3 
+1 6 8 1 0 7 4 9 4 1 7 9 2 3 7 8 2 6 9 3 2 9 2 4 4 9 2 1 
+9 4 9 9 7 0 6 1 8 8 9 7 5 5 4 1 2 7 6 6 9 4 6 6 8 4 6 8 
+4 4 9 5 4 6 0 5 6 2 9 4 4 7 5 1 8 7 1 4 8 6 2 3 7 1 7 7 
+5 3 9 5 9 1 5 0 1 9 6 1 8 3 2 1 5 5 5 4 4 1 1 5 3 6 8 4 
+9 4 2 9 4 8 6 1 0 8 6 9 7 6 5 3 1 9 8 7 9 6 4 8 1 2 8 6 
+8 6 6 9 1 8 2 9 8 0 9 2 6 7 4 5 4 4 5 7 3 9 4 9 4 4 5 5 
+5 9 5 5 7 9 9 6 6 9 0 5 7 1 8 4 6 5 6 8 3 3 1 8 3 9 3 5 
+8 1 7 8 9 7 4 1 9 2 5 0 8 2 4 1 8 2 6 9 8 2 5 5 9 9 5 1 
+3 8 9 1 2 5 4 8 7 6 7 8 0 9 9 1 9 7 3 9 1 3 2 2 7 8 2 7 
+5 1 6 7 3 5 7 3 6 7 1 2 9 0 8 3 2 8 1 2 9 9 6 4 9 5 4 7 
+2 6 8 1 7 4 5 2 5 4 8 4 9 8 0 9 7 2 9 5 3 7 3 3 7 2 6 4 
+7 7 3 5 8 1 1 1 3 5 4 1 1 3 9 0 3 9 4 9 9 8 7 4 2 7 9 5 
+2 9 9 6 2 2 8 5 1 4 6 8 9 2 7 3 0 2 1 2 3 5 9 3 8 4 1 1 
+2 6 3 6 6 7 7 5 9 4 5 2 7 8 2 9 2 0 4 8 7 8 3 8 2 4 7 3 
+7 2 9 2 9 6 1 5 8 5 6 6 3 1 9 4 1 4 0 4 7 6 4 8 2 9 1 1 
+1 5 9 8 3 6 4 4 7 7 8 9 9 2 5 9 2 8 4 0 9 5 3 7 9 5 1 3 
+3 1 8 5 2 9 8 4 9 3 3 8 1 9 3 9 3 7 7 9 0 9 5 4 7 4 5 9 
+5 5 6 5 9 4 6 1 6 9 3 2 3 9 7 8 5 8 6 5 9 0 6 9 2 8 7 4 
+4 8 9 1 2 6 2 1 4 4 1 5 2 6 3 7 9 3 4 3 5 6 0 4 8 1 7 5 
+8 4 1 6 4 6 3 5 8 9 8 5 2 4 3 4 3 8 8 7 4 9 4 0 3 9 1 9 
+3 1 3 4 4 8 7 3 1 4 3 9 7 9 7 2 8 2 2 9 7 2 8 3 0 1 5 8 
+2 2 6 8 9 4 1 6 2 4 9 9 8 5 2 7 4 4 9 5 4 8 1 9 1 0 3 5 
+8 9 1 7 2 6 7 8 8 5 3 5 2 4 6 9 1 7 1 1 5 7 7 1 5 3 0 6 
+1 9 8 3 1 8 7 4 6 5 5 1 7 7 4 5 1 3 1 3 9 4 5 9 8 5 6 0 
+
+Cities: 
+3 4 5 9 11 13 14 15 16 19 20 24 25 26 
+
+Windspeeds: 
+0: 0
+1: 1
+2: 0
+3: 0
+4: 0
+5: 0
+6: 7
+7: 0
+8: 1
+9: 0
+10: 8
+11: 0
+12: 1
+13: 0
+14: 0
+15: 0
+16: 0
+17: 0
+18: 1
+19: 0
+20: 0
+21: 0
+22: 0
+23: 1
+24: 0
+25: 0
+26: 0
+27: 6
+
+Starting City: 3
+Generation 0
+Best: -2
+Average: -8
+Overall Best Solution: -2
+Generation 1
+Best: 3
+Average: -7
+Overall Best Solution: 3
+Generation 2
+Best: 5
+Average: -5
+Overall Best Solution: 5
+Generation 3
+Best: 2
+Average: -5
+Generation 4
+Best: 3
+Average: -6
+Generation 5
+Best: 4
+Average: -4
+Generation 6
+Best: 3
+Average: -4
+Generation 7
+Best: 7
+Average: -4
+Overall Best Solution: 7
+Generation 8
+Best: 3
+Average: -3
+Generation 9
+Best: 6
+Average: -1
+Generation 10
+Best: 5
+Average: -1
+Generation 11
+Best: 6
+Average: -4
+Generation 12
+Best: 4
+Average: -3
+Generation 13
+Best: 4
+Average: -3
+Generation 14
+Best: 6
+Average: -4
+Generation 15
+Best: 5
+Average: -3
+Generation 16
+Best: 3
+Average: -3
+Generation 17
+Best: 5
+Average: -2
+Generation 18
+Best: 6
+Average: -1
+Generation 19
+Best: 3
+Average: -2
+Cost: 7
+Windmills: 6 10 12 18 27 
+Route: 3 22 10 13 18 6 18 27 4 3 12 3 
+Total time: 118
+Starting best fitness: 7
+1 of 255 windmill sets remaining
+2 of 255 windmill sets remaining
+3 of 255 windmill sets remaining
+4 of 255 windmill sets remaining
+5 of 255 windmill sets remaining
+6 of 255 windmill sets remaining
+7 of 255 windmill sets remaining
+8 of 255 windmill sets remaining
+9 of 255 windmill sets remaining
+10 of 255 windmill sets remaining
+11 of 255 windmill sets remaining
+12 of 255 windmill sets remaining
+13 of 255 windmill sets remaining
+14 of 255 windmill sets remaining
+15 of 255 windmill sets remaining
+16 of 255 windmill sets remaining
+17 of 255 windmill sets remaining
+18 of 255 windmill sets remaining
+19 of 255 windmill sets remaining
+20 of 255 windmill sets remaining
+21 of 255 windmill sets remaining
+22 of 255 windmill sets remaining
+23 of 255 windmill sets remaining
+24 of 255 windmill sets remaining
+25 of 255 windmill sets remaining
+26 of 255 windmill sets remaining
+27 of 255 windmill sets remaining
+28 of 255 windmill sets remaining
+29 of 255 windmill sets remaining
+30 of 255 windmill sets remaining
+31 of 255 windmill sets remaining
+32 of 255 windmill sets remaining
+33 of 255 windmill sets remaining
+34 of 255 windmill sets remaining
+35 of 255 windmill sets remaining
+36 of 255 windmill sets remaining
+37 of 255 windmill sets remaining
+38 of 255 windmill sets remaining
+39 of 255 windmill sets remaining
+40 of 255 windmill sets remaining
+41 of 255 windmill sets remaining
+42 of 255 windmill sets remaining
+43 of 255 windmill sets remaining
+44 of 255 windmill sets remaining
+45 of 255 windmill sets remaining
+46 of 255 windmill sets remaining
+47 of 255 windmill sets remaining
+48 of 255 windmill sets remaining
+49 of 255 windmill sets remaining
+50 of 255 windmill sets remaining
+51 of 255 windmill sets remaining
+52 of 255 windmill sets remaining
+53 of 255 windmill sets remaining
+54 of 255 windmill sets remaining
+55 of 255 windmill sets remaining
+56 of 255 windmill sets remaining
+57 of 255 windmill sets remaining
+58 of 255 windmill sets remaining
+59 of 255 windmill sets remaining
+60 of 255 windmill sets remaining
+61 of 255 windmill sets remaining
+62 of 255 windmill sets remaining
+63 of 255 windmill sets remaining
+64 of 255 windmill sets remaining
+65 of 255 windmill sets remaining
+66 of 255 windmill sets remaining
+67 of 255 windmill sets remaining
+68 of 255 windmill sets remaining
+69 of 255 windmill sets remaining
+70 of 255 windmill sets remaining
+71 of 255 windmill sets remaining
+72 of 255 windmill sets remaining
+73 of 255 windmill sets remaining
+74 of 255 windmill sets remaining
+75 of 255 windmill sets remaining
+76 of 255 windmill sets remaining
+77 of 255 windmill sets remaining
+78 of 255 windmill sets remaining
+79 of 255 windmill sets remaining
+80 of 255 windmill sets remaining
+81 of 255 windmill sets remaining
+82 of 255 windmill sets remaining
+83 of 255 windmill sets remaining
+84 of 255 windmill sets remaining
+85 of 255 windmill sets remaining
+86 of 255 windmill sets remaining
+87 of 255 windmill sets remaining
+88 of 255 windmill sets remaining
+89 of 255 windmill sets remaining
+90 of 255 windmill sets remaining
+91 of 255 windmill sets remaining
+92 of 255 windmill sets remaining
+93 of 255 windmill sets remaining
+94 of 255 windmill sets remaining
+95 of 255 windmill sets remaining
+96 of 255 windmill sets remaining
+97 of 255 windmill sets remaining
+98 of 255 windmill sets remaining
+99 of 255 windmill sets remaining
+100 of 255 windmill sets remaining
+101 of 255 windmill sets remaining
+102 of 255 windmill sets remaining
+103 of 255 windmill sets remaining
+104 of 255 windmill sets remaining
+105 of 255 windmill sets remaining
+106 of 255 windmill sets remaining
+107 of 255 windmill sets remaining
+108 of 255 windmill sets remaining
+109 of 255 windmill sets remaining
+110 of 255 windmill sets remaining
+111 of 255 windmill sets remaining
+112 of 255 windmill sets remaining
+113 of 255 windmill sets remaining
+114 of 255 windmill sets remaining
+115 of 255 windmill sets remaining
+116 of 255 windmill sets remaining
+117 of 255 windmill sets remaining
+118 of 255 windmill sets remaining
+119 of 255 windmill sets remaining
+120 of 255 windmill sets remaining
+121 of 255 windmill sets remaining
+122 of 255 windmill sets remaining
+123 of 255 windmill sets remaining
+124 of 255 windmill sets remaining
+125 of 255 windmill sets remaining
+126 of 255 windmill sets remaining
+127 of 255 windmill sets remaining
+128 of 255 windmill sets remaining
+129 of 255 windmill sets remaining
+130 of 255 windmill sets remaining
+131 of 255 windmill sets remaining
+132 of 255 windmill sets remaining
+133 of 255 windmill sets remaining
+134 of 255 windmill sets remaining
+135 of 255 windmill sets remaining
+136 of 255 windmill sets remaining
+137 of 255 windmill sets remaining
+138 of 255 windmill sets remaining
+139 of 255 windmill sets remaining
+140 of 255 windmill sets remaining
+141 of 255 windmill sets remaining
+142 of 255 windmill sets remaining
+143 of 255 windmill sets remaining
+144 of 255 windmill sets remaining
+145 of 255 windmill sets remaining
+146 of 255 windmill sets remaining
+147 of 255 windmill sets remaining
+148 of 255 windmill sets remaining
+149 of 255 windmill sets remaining
+150 of 255 windmill sets remaining
+151 of 255 windmill sets remaining
+152 of 255 windmill sets remaining
+153 of 255 windmill sets remaining
+154 of 255 windmill sets remaining
+155 of 255 windmill sets remaining
+156 of 255 windmill sets remaining
+157 of 255 windmill sets remaining
+158 of 255 windmill sets remaining
+159 of 255 windmill sets remaining
+160 of 255 windmill sets remaining
+161 of 255 windmill sets remaining
+162 of 255 windmill sets remaining
+163 of 255 windmill sets remaining
+164 of 255 windmill sets remaining
+165 of 255 windmill sets remaining
+166 of 255 windmill sets remaining
+167 of 255 windmill sets remaining
+168 of 255 windmill sets remaining
+169 of 255 windmill sets remaining
+170 of 255 windmill sets remaining
+New best found: 8
+171 of 255 windmill sets remaining
+172 of 255 windmill sets remaining
+173 of 255 windmill sets remaining
+174 of 255 windmill sets remaining
+175 of 255 windmill sets remaining
+176 of 255 windmill sets remaining
+177 of 255 windmill sets remaining
+178 of 255 windmill sets remaining
+179 of 255 windmill sets remaining
+180 of 255 windmill sets remaining
+181 of 255 windmill sets remaining
+182 of 255 windmill sets remaining
+183 of 255 windmill sets remaining
+184 of 255 windmill sets remaining
+185 of 255 windmill sets remaining
+186 of 255 windmill sets remaining
+187 of 255 windmill sets remaining
+188 of 255 windmill sets remaining
+189 of 255 windmill sets remaining
+190 of 255 windmill sets remaining
+191 of 255 windmill sets remaining
+192 of 255 windmill sets remaining
+193 of 255 windmill sets remaining
+194 of 255 windmill sets remaining
+195 of 255 windmill sets remaining
+196 of 255 windmill sets remaining
+197 of 255 windmill sets remaining
+198 of 255 windmill sets remaining
+199 of 255 windmill sets remaining
+200 of 255 windmill sets remaining
+201 of 255 windmill sets remaining
+202 of 255 windmill sets remaining
+203 of 255 windmill sets remaining
+204 of 255 windmill sets remaining
+205 of 255 windmill sets remaining
+206 of 255 windmill sets remaining
+207 of 255 windmill sets remaining
+208 of 255 windmill sets remaining
+209 of 255 windmill sets remaining
+210 of 255 windmill sets remaining
+211 of 255 windmill sets remaining
+212 of 255 windmill sets remaining
+213 of 255 windmill sets remaining
+214 of 255 windmill sets remaining
+215 of 255 windmill sets remaining
+216 of 255 windmill sets remaining
+217 of 255 windmill sets remaining
+218 of 255 windmill sets remaining
+219 of 255 windmill sets remaining
+220 of 255 windmill sets remaining
+221 of 255 windmill sets remaining
+222 of 255 windmill sets remaining
+223 of 255 windmill sets remaining
+224 of 255 windmill sets remaining
+225 of 255 windmill sets remaining
+226 of 255 windmill sets remaining
+227 of 255 windmill sets remaining
+228 of 255 windmill sets remaining
+229 of 255 windmill sets remaining
+230 of 255 windmill sets remaining
+231 of 255 windmill sets remaining
+232 of 255 windmill sets remaining
+233 of 255 windmill sets remaining
+234 of 255 windmill sets remaining
+235 of 255 windmill sets remaining
+236 of 255 windmill sets remaining
+237 of 255 windmill sets remaining
+238 of 255 windmill sets remaining
+239 of 255 windmill sets remaining
+240 of 255 windmill sets remaining
+241 of 255 windmill sets remaining
+242 of 255 windmill sets remaining
+243 of 255 windmill sets remaining
+244 of 255 windmill sets remaining
+245 of 255 windmill sets remaining
+246 of 255 windmill sets remaining
+247 of 255 windmill sets remaining
+248 of 255 windmill sets remaining
+249 of 255 windmill sets remaining
+250 of 255 windmill sets remaining
+251 of 255 windmill sets remaining
+252 of 255 windmill sets remaining
+253 of 255 windmill sets remaining
+254 of 255 windmill sets remaining
+255 of 255 windmill sets remaining
+Cost: 8
+Windmills: 6 10 18 27 
+Route: 3 22 10 13 18 6 18 27 4 3 
+Total time: 11
+

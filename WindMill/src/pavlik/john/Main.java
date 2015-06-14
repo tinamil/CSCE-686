@@ -1,5 +1,8 @@
 package pavlik.john;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -18,11 +21,11 @@ import javax.naming.directory.InvalidAttributesException;
 public class Main {
 
 	// Random Instance Generation Variables
-	static final int	size								= 30;
+	static final int	size								= 100;
 	static final int	maxspeed							= 10;
-	static final double	edgeChance							= .3;
+	static final double	edgeChance							= 1;
 	static final int	maxcost								= 10;
-	static final double	cityChance							= .2;
+	static final double	cityChance							= .5;
 	static final double	windmillChance						= .5;
 
 	// Genetic Algorithm Variables
@@ -39,9 +42,9 @@ public class Main {
 	// Amount of pheromone to lay down after each iteration, will be divided by length of route
 	static final double	PHEROMONE_PLACEMENT					= 50;
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 		Windmill test = generateRandomInstance();
-		
+		System.setOut(new PrintStream(new File("test3c.txt")));
 		System.out.println("Instance Size: " + size);
 		System.out.println("Max Speed: " + maxspeed);
 		System.out.println("Edge Chance: " + edgeChance);
@@ -49,7 +52,7 @@ public class Main {
 		System.out.println("City Chance: " + cityChance);
 		System.out.println("Windmill Chance: " + windmillChance);
 		System.out.println();
-		System.out.println("Genetic Size: " + populationSize);
+		System.out.println("GeneticState Size: " + populationSize);
 		System.out.println("Iterations: " + iterations);
 		System.out.println("Number of ants: " + NUM_ANTS);
 		System.out.println("Iterations without improvement: " + CONVERGENCE);
@@ -80,21 +83,21 @@ public class Main {
 		System.out.println();
 		System.out.println("Starting City: " + test.startCity);
 
-		Genetic solution = stochasticGeneticAntSearch(test);
+		GeneticState solution = stochasticGeneticAntSearch(test);
 		deterministicSearch(test, solution.windmills, Arrays.asList(solution.route));
 	}
 
-	public static Genetic stochasticGeneticAntSearch(Windmill instance) {
+	public static GeneticState stochasticGeneticAntSearch(Windmill instance) {
 		// Generate random problem
-		Genetic.instance = instance;
+		GeneticState.instance = instance;
 		long start = System.currentTimeMillis();
-		Genetic bestSolution = null;
+		GeneticState bestSolution = null;
 
 		// Generate random solutions
-		Genetic[] solutions = new Genetic[populationSize];
+		GeneticState[] solutions = new GeneticState[populationSize];
 		for (int i = 0; i < populationSize; ++i) {
 			boolean[] windmills = generateRandomWindmillSolution(instance);
-			Genetic solution = new Genetic(windmills);
+			GeneticState solution = new GeneticState(windmills);
 			solutions[i] = solution;
 			solution.start();
 		}
@@ -130,21 +133,21 @@ public class Main {
 			// Replace the worst 20% of the solutions with new random solutions
 			for (int j = 0; j < (int) Math.round(populationSize * 0.2); ++j) {
 				boolean[] windmills = generateRandomWindmillSolution(instance);
-				Genetic solution = new Genetic(windmills);
+				GeneticState solution = new GeneticState(windmills);
 				solutions[j] = solution;
 				solution.start();
 			}
 			// Save the first solution so that it can be used to combine with the last solution
 			// later
-			Genetic solutionZero = solutions[(int) Math.round(populationSize * 0.2)];
+			GeneticState solutionZero = solutions[(int) Math.round(populationSize * 0.2)];
 
 			// Perform cross-over / mutation of windmill placement, maintaining a static population
 			// size
 			for (int j = (int) Math.round(populationSize * 0.2); j < populationSize; ++j) {
 				// Every parent combines with the parent of one relative fitness level better, with
 				// the highest fitness parent combining with the lowest
-				Genetic parentLeft = solutions[j];
-				Genetic parentRight;
+				GeneticState parentLeft = solutions[j];
+				GeneticState parentRight;
 				if (j + 1 < populationSize) {
 					parentRight = solutions[j + 1];
 				} else {
@@ -161,8 +164,8 @@ public class Main {
 						newWindmills[k] = rand.nextBoolean();
 					}
 				}
-				// Randomly create a route to match the new windmill locations
-				Genetic child = new Genetic(newWindmills);
+				//Begin solving the route problem
+				GeneticState child = new GeneticState(newWindmills);
 				solutions[j] = child;
 				child.start();
 			}

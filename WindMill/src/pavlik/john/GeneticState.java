@@ -4,13 +4,13 @@ import java.util.Arrays;
 import java.util.Random;
 
 /**
- * After instantiation, the thread must be executed with a Genetic.start() command. After the thread
+ * After instantiation, the thread must be executed with a GeneticState.start() command. After the thread
  * terminates execution then the fitness value and route can be read.
  * 
  * @author John
  *
  */
-public class Genetic extends Thread implements Comparable<Genetic> {
+public class GeneticState extends Thread implements Comparable<GeneticState> {
 
 	static Windmill	instance;
 	boolean[]		windmills;
@@ -18,7 +18,7 @@ public class Genetic extends Thread implements Comparable<Genetic> {
 	Random			rand	= new Random();
 	int				fitness;
 
-	public Genetic(boolean[] windmills2) {
+	public GeneticState(boolean[] windmills2) {
 		this.windmills = windmills2;
 	}
 
@@ -38,7 +38,7 @@ public class Genetic extends Thread implements Comparable<Genetic> {
 	}
 
 	@Override
-	public int compareTo(Genetic o) {
+	public int compareTo(GeneticState o) {
 		if (o == null) return 0;
 		return Integer.compare(fitness, o.fitness);
 	}
@@ -102,10 +102,10 @@ public class Genetic extends Thread implements Comparable<Genetic> {
 
 	private static class Ant extends Thread {
 		public Integer[]	antRoute;
-		Genetic				parent;
+		GeneticState				parent;
 		static double[][]	pheromoneMatrix	= new double[instance.adjacencyMatrix.length][instance.adjacencyMatrix.length];
 
-		Ant(Genetic parent) {
+		Ant(GeneticState parent) {
 			this.parent = parent;
 		}
 

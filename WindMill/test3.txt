@@ -1,0 +1,1042 @@
+Instance Size: 30
+Max Speed: 10
+Edge Chance: 1.0
+Max Cost: 10
+City Chance: 0.5
+Windmill Chance: 0.5
+
+GeneticState Size: 20
+Iterations: 20
+Number of ants: 25
+Iterations without improvement: 100
+Pheromone Evaporation: 0.9
+Pheromone Placement: 50.0
+
+Adjacency Cost Matrix:
+0 2 6 1 7 6 8 4 5 2 9 9 7 8 8 9 4 6 6 7 3 7 9 9 6 8 2 1 1 8 
+2 0 9 4 3 8 4 8 5 8 2 3 3 7 3 9 2 8 5 5 1 3 2 5 1 3 2 3 4 3 
+6 9 0 4 9 9 5 5 4 7 1 9 5 5 3 9 1 6 3 5 9 7 3 3 2 9 7 9 9 2 
+1 4 4 0 6 8 9 8 9 6 1 4 7 9 7 4 7 1 4 3 3 6 2 4 5 2 1 5 9 3 
+7 3 9 6 0 1 2 6 1 8 2 8 9 8 7 7 8 8 9 6 1 8 6 8 2 9 8 1 2 5 
+6 8 9 8 1 0 5 6 6 1 9 4 2 8 5 7 2 5 1 9 2 3 3 2 3 3 2 3 4 7 
+8 4 5 9 2 5 0 9 9 4 1 9 1 2 8 4 1 8 9 5 5 6 8 5 4 2 1 9 6 4 
+4 8 5 8 6 6 9 0 4 2 3 5 5 3 5 8 2 2 1 9 7 8 9 7 4 6 5 9 3 6 
+5 5 4 9 1 6 9 4 0 8 6 2 2 5 9 3 5 7 8 9 2 7 4 3 7 3 5 9 7 3 
+2 8 7 6 8 1 4 2 8 0 5 8 6 3 7 3 8 4 9 4 4 8 3 1 1 3 8 3 7 6 
+9 2 1 1 2 9 1 3 6 5 0 2 5 1 2 6 9 3 7 1 7 5 3 3 1 4 9 5 2 6 
+9 3 9 4 8 4 9 5 2 8 2 0 6 6 4 6 5 1 9 3 9 7 7 4 2 6 1 4 5 6 
+7 3 5 7 9 2 1 5 2 6 5 6 0 4 8 2 8 7 5 4 8 1 1 3 2 4 4 6 8 9 
+8 7 5 9 8 8 2 3 5 3 1 6 4 0 3 8 7 3 6 3 1 1 1 8 6 8 9 3 4 8 
+8 3 3 7 7 5 8 5 9 7 2 4 8 3 0 6 2 9 4 2 5 2 7 5 4 2 7 7 1 1 
+9 9 9 4 7 7 4 8 3 3 6 6 2 8 6 0 7 4 2 6 9 9 2 9 1 3 5 7 5 7 
+4 2 1 7 8 2 1 2 5 8 9 5 8 7 2 7 0 5 5 6 7 5 3 9 7 2 1 3 3 7 
+6 8 6 1 8 5 8 2 7 4 3 1 7 3 9 4 5 0 9 5 9 9 9 5 2 4 7 4 1 8 
+6 5 3 4 9 1 9 1 8 9 7 9 5 6 4 2 5 9 0 7 8 4 2 4 1 9 8 4 7 7 
+7 5 5 3 6 9 5 9 9 4 1 3 4 3 2 6 6 5 7 0 9 2 2 7 1 2 6 7 5 9 
+3 1 9 3 1 2 5 7 2 4 7 9 8 1 5 9 7 9 8 9 0 3 3 5 3 4 9 8 9 7 
+7 3 7 6 8 3 6 8 7 8 5 7 1 1 2 9 5 9 4 2 3 0 9 2 9 8 5 6 5 2 
+9 2 3 2 6 3 8 9 4 3 3 7 1 1 7 2 3 9 2 2 3 9 0 4 9 3 7 3 8 4 
+9 5 3 4 8 2 5 7 3 1 3 4 3 8 5 9 9 5 4 7 5 2 4 0 1 3 1 7 4 8 
+6 1 2 5 2 3 4 4 7 1 1 2 2 6 4 1 7 2 1 1 3 9 9 1 0 1 2 7 9 1 
+8 3 9 2 9 3 2 6 3 3 4 6 4 8 2 3 2 4 9 2 4 8 3 3 1 0 7 1 8 2 
+2 2 7 1 8 2 1 5 5 8 9 1 4 9 7 5 1 7 8 6 9 5 7 1 2 7 0 5 6 2 
+1 3 9 5 1 3 9 9 9 3 5 4 6 3 7 7 3 4 4 7 8 6 3 7 7 1 5 0 8 9 
+1 4 9 9 2 4 6 3 7 7 2 5 8 4 1 5 3 1 7 5 9 5 8 4 9 8 6 8 0 4 
+8 3 2 3 5 7 4 6 3 6 6 6 9 8 1 7 7 8 7 9 7 2 4 8 1 2 2 9 4 0 
+
+Cities: 
+0 2 3 5 7 12 15 16 18 19 20 24 26 27 
+
+Windspeeds: 
+0: 0
+1: 0
+2: 0
+3: 0
+4: 5
+5: 0
+6: 9
+7: 0
+8: 3
+9: 2
+10: 0
+11: 3
+12: 0
+13: 4
+14: 3
+15: 0
+16: 0
+17: 1
+18: 0
+19: 0
+20: 0
+21: 0
+22: 7
+23: 9
+24: 0
+25: 2
+26: 0
+27: 0
+28: 9
+29: 0
+
+Starting City: 0
+Generation 0
+Best: 12
+Average: -2
+Overall Best Solution: 12
+Generation 1
+Best: 14
+Average: -1
+Overall Best Solution: 14
+Generation 2
+Best: 10
+Average: -1
+Generation 3
+Best: 8
+Average: -1
+Generation 4
+Best: 12
+Average: 0
+Generation 5
+Best: 10
+Average: 0
+Generation 6
+Best: 13
+Average: 0
+Generation 7
+Best: 12
+Average: 0
+Generation 8
+Best: 9
+Average: 1
+Generation 9
+Best: 15
+Average: 2
+Overall Best Solution: 15
+Generation 10
+Best: 15
+Average: 2
+Generation 11
+Best: 16
+Average: 6
+Overall Best Solution: 16
+Generation 12
+Best: 13
+Average: 4
+Generation 13
+Best: 17
+Average: 8
+Overall Best Solution: 17
+Generation 14
+Best: 16
+Average: 5
+Generation 15
+Best: 15
+Average: 5
+Generation 16
+Best: 15
+Average: 6
+Generation 17
+Best: 16
+Average: 8
+Generation 18
+Best: 14
+Average: 6
+Generation 19
+Best: 15
+Average: 7
+Cost: 17
+Windmills: 4 6 22 23 28 
+Route: 0 27 22 23 26 6 4 28 0 
+Total time: 104
+Starting best fitness: 17
+1 of 4095 windmill sets remaining
+2 of 4095 windmill sets remaining
+3 of 4095 windmill sets remaining
+4 of 4095 windmill sets remaining
+5 of 4095 windmill sets remaining
+6 of 4095 windmill sets remaining
+7 of 4095 windmill sets remaining
+8 of 4095 windmill sets remaining
+9 of 4095 windmill sets remaining
+10 of 4095 windmill sets remaining
+11 of 4095 windmill sets remaining
+12 of 4095 windmill sets remaining
+13 of 4095 windmill sets remaining
+14 of 4095 windmill sets remaining
+15 of 4095 windmill sets remaining
+16 of 4095 windmill sets remaining
+17 of 4095 windmill sets remaining
+18 of 4095 windmill sets remaining
+19 of 4095 windmill sets remaining
+20 of 4095 windmill sets remaining
+21 of 4095 windmill sets remaining
+22 of 4095 windmill sets remaining
+23 of 4095 windmill sets remaining
+24 of 4095 windmill sets remaining
+25 of 4095 windmill sets remaining
+26 of 4095 windmill sets remaining
+27 of 4095 windmill sets remaining
+28 of 4095 windmill sets remaining
+29 of 4095 windmill sets remaining
+30 of 4095 windmill sets remaining
+31 of 4095 windmill sets remaining
+32 of 4095 windmill sets remaining
+33 of 4095 windmill sets remaining
+34 of 4095 windmill sets remaining
+35 of 4095 windmill sets remaining
+36 of 4095 windmill sets remaining
+37 of 4095 windmill sets remaining
+38 of 4095 windmill sets remaining
+39 of 4095 windmill sets remaining
+40 of 4095 windmill sets remaining
+41 of 4095 windmill sets remaining
+42 of 4095 windmill sets remaining
+43 of 4095 windmill sets remaining
+44 of 4095 windmill sets remaining
+45 of 4095 windmill sets remaining
+46 of 4095 windmill sets remaining
+47 of 4095 windmill sets remaining
+48 of 4095 windmill sets remaining
+49 of 4095 windmill sets remaining
+50 of 4095 windmill sets remaining
+51 of 4095 windmill sets remaining
+52 of 4095 windmill sets remaining
+53 of 4095 windmill sets remaining
+54 of 4095 windmill sets remaining
+55 of 4095 windmill sets remaining
+56 of 4095 windmill sets remaining
+57 of 4095 windmill sets remaining
+58 of 4095 windmill sets remaining
+59 of 4095 windmill sets remaining
+60 of 4095 windmill sets remaining
+61 of 4095 windmill sets remaining
+62 of 4095 windmill sets remaining
+63 of 4095 windmill sets remaining
+64 of 4095 windmill sets remaining
+65 of 4095 windmill sets remaining
+66 of 4095 windmill sets remaining
+67 of 4095 windmill sets remaining
+68 of 4095 windmill sets remaining
+69 of 4095 windmill sets remaining
+70 of 4095 windmill sets remaining
+71 of 4095 windmill sets remaining
+72 of 4095 windmill sets remaining
+73 of 4095 windmill sets remaining
+74 of 4095 windmill sets remaining
+75 of 4095 windmill sets remaining
+76 of 4095 windmill sets remaining
+77 of 4095 windmill sets remaining
+78 of 4095 windmill sets remaining
+79 of 4095 windmill sets remaining
+80 of 4095 windmill sets remaining
+81 of 4095 windmill sets remaining
+82 of 4095 windmill sets remaining
+83 of 4095 windmill sets remaining
+84 of 4095 windmill sets remaining
+85 of 4095 windmill sets remaining
+86 of 4095 windmill sets remaining
+87 of 4095 windmill sets remaining
+88 of 4095 windmill sets remaining
+89 of 4095 windmill sets remaining
+90 of 4095 windmill sets remaining
+91 of 4095 windmill sets remaining
+92 of 4095 windmill sets remaining
+93 of 4095 windmill sets remaining
+94 of 4095 windmill sets remaining
+95 of 4095 windmill sets remaining
+96 of 4095 windmill sets remaining
+97 of 4095 windmill sets remaining
+98 of 4095 windmill sets remaining
+99 of 4095 windmill sets remaining
+100 of 4095 windmill sets remaining
+101 of 4095 windmill sets remaining
+102 of 4095 windmill sets remaining
+103 of 4095 windmill sets remaining
+104 of 4095 windmill sets remaining
+105 of 4095 windmill sets remaining
+106 of 4095 windmill sets remaining
+107 of 4095 windmill sets remaining
+108 of 4095 windmill sets remaining
+109 of 4095 windmill sets remaining
+110 of 4095 windmill sets remaining
+111 of 4095 windmill sets remaining
+112 of 4095 windmill sets remaining
+113 of 4095 windmill sets remaining
+114 of 4095 windmill sets remaining
+115 of 4095 windmill sets remaining
+116 of 4095 windmill sets remaining
+117 of 4095 windmill sets remaining
+118 of 4095 windmill sets remaining
+119 of 4095 windmill sets remaining
+120 of 4095 windmill sets remaining
+121 of 4095 windmill sets remaining
+122 of 4095 windmill sets remaining
+123 of 4095 windmill sets remaining
+124 of 4095 windmill sets remaining
+125 of 4095 windmill sets remaining
+126 of 4095 windmill sets remaining
+127 of 4095 windmill sets remaining
+128 of 4095 windmill sets remaining
+129 of 4095 windmill sets remaining
+130 of 4095 windmill sets remaining
+131 of 4095 windmill sets remaining
+132 of 4095 windmill sets remaining
+133 of 4095 windmill sets remaining
+134 of 4095 windmill sets remaining
+135 of 4095 windmill sets remaining
+136 of 4095 windmill sets remaining
+137 of 4095 windmill sets remaining
+138 of 4095 windmill sets remaining
+139 of 4095 windmill sets remaining
+140 of 4095 windmill sets remaining
+141 of 4095 windmill sets remaining
+142 of 4095 windmill sets remaining
+143 of 4095 windmill sets remaining
+144 of 4095 windmill sets remaining
+145 of 4095 windmill sets remaining
+146 of 4095 windmill sets remaining
+147 of 4095 windmill sets remaining
+148 of 4095 windmill sets remaining
+149 of 4095 windmill sets remaining
+150 of 4095 windmill sets remaining
+151 of 4095 windmill sets remaining
+152 of 4095 windmill sets remaining
+153 of 4095 windmill sets remaining
+154 of 4095 windmill sets remaining
+155 of 4095 windmill sets remaining
+156 of 4095 windmill sets remaining
+157 of 4095 windmill sets remaining
+158 of 4095 windmill sets remaining
+159 of 4095 windmill sets remaining
+160 of 4095 windmill sets remaining
+161 of 4095 windmill sets remaining
+162 of 4095 windmill sets remaining
+163 of 4095 windmill sets remaining
+164 of 4095 windmill sets remaining
+165 of 4095 windmill sets remaining
+166 of 4095 windmill sets remaining
+167 of 4095 windmill sets remaining
+168 of 4095 windmill sets remaining
+169 of 4095 windmill sets remaining
+170 of 4095 windmill sets remaining
+171 of 4095 windmill sets remaining
+172 of 4095 windmill sets remaining
+173 of 4095 windmill sets remaining
+174 of 4095 windmill sets remaining
+175 of 4095 windmill sets remaining
+176 of 4095 windmill sets remaining
+177 of 4095 windmill sets remaining
+178 of 4095 windmill sets remaining
+179 of 4095 windmill sets remaining
+180 of 4095 windmill sets remaining
+181 of 4095 windmill sets remaining
+182 of 4095 windmill sets remaining
+183 of 4095 windmill sets remaining
+184 of 4095 windmill sets remaining
+185 of 4095 windmill sets remaining
+186 of 4095 windmill sets remaining
+187 of 4095 windmill sets remaining
+188 of 4095 windmill sets remaining
+189 of 4095 windmill sets remaining
+190 of 4095 windmill sets remaining
+191 of 4095 windmill sets remaining
+192 of 4095 windmill sets remaining
+193 of 4095 windmill sets remaining
+194 of 4095 windmill sets remaining
+195 of 4095 windmill sets remaining
+196 of 4095 windmill sets remaining
+197 of 4095 windmill sets remaining
+198 of 4095 windmill sets remaining
+199 of 4095 windmill sets remaining
+200 of 4095 windmill sets remaining
+201 of 4095 windmill sets remaining
+202 of 4095 windmill sets remaining
+203 of 4095 windmill sets remaining
+204 of 4095 windmill sets remaining
+205 of 4095 windmill sets remaining
+206 of 4095 windmill sets remaining
+207 of 4095 windmill sets remaining
+208 of 4095 windmill sets remaining
+209 of 4095 windmill sets remaining
+210 of 4095 windmill sets remaining
+211 of 4095 windmill sets remaining
+212 of 4095 windmill sets remaining
+213 of 4095 windmill sets remaining
+214 of 4095 windmill sets remaining
+215 of 4095 windmill sets remaining
+216 of 4095 windmill sets remaining
+217 of 4095 windmill sets remaining
+218 of 4095 windmill sets remaining
+219 of 4095 windmill sets remaining
+220 of 4095 windmill sets remaining
+221 of 4095 windmill sets remaining
+222 of 4095 windmill sets remaining
+223 of 4095 windmill sets remaining
+224 of 4095 windmill sets remaining
+225 of 4095 windmill sets remaining
+226 of 4095 windmill sets remaining
+227 of 4095 windmill sets remaining
+228 of 4095 windmill sets remaining
+229 of 4095 windmill sets remaining
+230 of 4095 windmill sets remaining
+231 of 4095 windmill sets remaining
+232 of 4095 windmill sets remaining
+233 of 4095 windmill sets remaining
+234 of 4095 windmill sets remaining
+235 of 4095 windmill sets remaining
+236 of 4095 windmill sets remaining
+237 of 4095 windmill sets remaining
+238 of 4095 windmill sets remaining
+239 of 4095 windmill sets remaining
+240 of 4095 windmill sets remaining
+241 of 4095 windmill sets remaining
+242 of 4095 windmill sets remaining
+243 of 4095 windmill sets remaining
+244 of 4095 windmill sets remaining
+245 of 4095 windmill sets remaining
+246 of 4095 windmill sets remaining
+247 of 4095 windmill sets remaining
+248 of 4095 windmill sets remaining
+249 of 4095 windmill sets remaining
+250 of 4095 windmill sets remaining
+251 of 4095 windmill sets remaining
+252 of 4095 windmill sets remaining
+253 of 4095 windmill sets remaining
+254 of 4095 windmill sets remaining
+255 of 4095 windmill sets remaining
+256 of 4095 windmill sets remaining
+257 of 4095 windmill sets remaining
+258 of 4095 windmill sets remaining
+259 of 4095 windmill sets remaining
+260 of 4095 windmill sets remaining
+261 of 4095 windmill sets remaining
+262 of 4095 windmill sets remaining
+263 of 4095 windmill sets remaining
+264 of 4095 windmill sets remaining
+265 of 4095 windmill sets remaining
+266 of 4095 windmill sets remaining
+267 of 4095 windmill sets remaining
+268 of 4095 windmill sets remaining
+269 of 4095 windmill sets remaining
+270 of 4095 windmill sets remaining
+271 of 4095 windmill sets remaining
+272 of 4095 windmill sets remaining
+273 of 4095 windmill sets remaining
+274 of 4095 windmill sets remaining
+275 of 4095 windmill sets remaining
+276 of 4095 windmill sets remaining
+277 of 4095 windmill sets remaining
+278 of 4095 windmill sets remaining
+279 of 4095 windmill sets remaining
+280 of 4095 windmill sets remaining
+281 of 4095 windmill sets remaining
+282 of 4095 windmill sets remaining
+283 of 4095 windmill sets remaining
+284 of 4095 windmill sets remaining
+285 of 4095 windmill sets remaining
+286 of 4095 windmill sets remaining
+287 of 4095 windmill sets remaining
+288 of 4095 windmill sets remaining
+289 of 4095 windmill sets remaining
+290 of 4095 windmill sets remaining
+291 of 4095 windmill sets remaining
+292 of 4095 windmill sets remaining
+293 of 4095 windmill sets remaining
+294 of 4095 windmill sets remaining
+295 of 4095 windmill sets remaining
+296 of 4095 windmill sets remaining
+297 of 4095 windmill sets remaining
+298 of 4095 windmill sets remaining
+299 of 4095 windmill sets remaining
+300 of 4095 windmill sets remaining
+301 of 4095 windmill sets remaining
+302 of 4095 windmill sets remaining
+303 of 4095 windmill sets remaining
+304 of 4095 windmill sets remaining
+305 of 4095 windmill sets remaining
+306 of 4095 windmill sets remaining
+307 of 4095 windmill sets remaining
+308 of 4095 windmill sets remaining
+309 of 4095 windmill sets remaining
+310 of 4095 windmill sets remaining
+311 of 4095 windmill sets remaining
+312 of 4095 windmill sets remaining
+313 of 4095 windmill sets remaining
+314 of 4095 windmill sets remaining
+315 of 4095 windmill sets remaining
+316 of 4095 windmill sets remaining
+317 of 4095 windmill sets remaining
+318 of 4095 windmill sets remaining
+319 of 4095 windmill sets remaining
+320 of 4095 windmill sets remaining
+321 of 4095 windmill sets remaining
+322 of 4095 windmill sets remaining
+323 of 4095 windmill sets remaining
+324 of 4095 windmill sets remaining
+325 of 4095 windmill sets remaining
+326 of 4095 windmill sets remaining
+327 of 4095 windmill sets remaining
+328 of 4095 windmill sets remaining
+329 of 4095 windmill sets remaining
+330 of 4095 windmill sets remaining
+331 of 4095 windmill sets remaining
+332 of 4095 windmill sets remaining
+333 of 4095 windmill sets remaining
+334 of 4095 windmill sets remaining
+335 of 4095 windmill sets remaining
+336 of 4095 windmill sets remaining
+337 of 4095 windmill sets remaining
+338 of 4095 windmill sets remaining
+339 of 4095 windmill sets remaining
+340 of 4095 windmill sets remaining
+341 of 4095 windmill sets remaining
+342 of 4095 windmill sets remaining
+343 of 4095 windmill sets remaining
+344 of 4095 windmill sets remaining
+345 of 4095 windmill sets remaining
+346 of 4095 windmill sets remaining
+347 of 4095 windmill sets remaining
+348 of 4095 windmill sets remaining
+349 of 4095 windmill sets remaining
+350 of 4095 windmill sets remaining
+351 of 4095 windmill sets remaining
+352 of 4095 windmill sets remaining
+353 of 4095 windmill sets remaining
+354 of 4095 windmill sets remaining
+355 of 4095 windmill sets remaining
+356 of 4095 windmill sets remaining
+357 of 4095 windmill sets remaining
+358 of 4095 windmill sets remaining
+359 of 4095 windmill sets remaining
+360 of 4095 windmill sets remaining
+361 of 4095 windmill sets remaining
+362 of 4095 windmill sets remaining
+363 of 4095 windmill sets remaining
+364 of 4095 windmill sets remaining
+365 of 4095 windmill sets remaining
+366 of 4095 windmill sets remaining
+367 of 4095 windmill sets remaining
+368 of 4095 windmill sets remaining
+369 of 4095 windmill sets remaining
+370 of 4095 windmill sets remaining
+371 of 4095 windmill sets remaining
+372 of 4095 windmill sets remaining
+373 of 4095 windmill sets remaining
+374 of 4095 windmill sets remaining
+375 of 4095 windmill sets remaining
+376 of 4095 windmill sets remaining
+377 of 4095 windmill sets remaining
+378 of 4095 windmill sets remaining
+379 of 4095 windmill sets remaining
+380 of 4095 windmill sets remaining
+381 of 4095 windmill sets remaining
+382 of 4095 windmill sets remaining
+383 of 4095 windmill sets remaining
+384 of 4095 windmill sets remaining
+385 of 4095 windmill sets remaining
+386 of 4095 windmill sets remaining
+387 of 4095 windmill sets remaining
+388 of 4095 windmill sets remaining
+389 of 4095 windmill sets remaining
+390 of 4095 windmill sets remaining
+391 of 4095 windmill sets remaining
+392 of 4095 windmill sets remaining
+393 of 4095 windmill sets remaining
+394 of 4095 windmill sets remaining
+395 of 4095 windmill sets remaining
+396 of 4095 windmill sets remaining
+397 of 4095 windmill sets remaining
+398 of 4095 windmill sets remaining
+399 of 4095 windmill sets remaining
+400 of 4095 windmill sets remaining
+401 of 4095 windmill sets remaining
+402 of 4095 windmill sets remaining
+403 of 4095 windmill sets remaining
+404 of 4095 windmill sets remaining
+405 of 4095 windmill sets remaining
+406 of 4095 windmill sets remaining
+407 of 4095 windmill sets remaining
+408 of 4095 windmill sets remaining
+409 of 4095 windmill sets remaining
+410 of 4095 windmill sets remaining
+411 of 4095 windmill sets remaining
+412 of 4095 windmill sets remaining
+413 of 4095 windmill sets remaining
+414 of 4095 windmill sets remaining
+415 of 4095 windmill sets remaining
+416 of 4095 windmill sets remaining
+417 of 4095 windmill sets remaining
+418 of 4095 windmill sets remaining
+419 of 4095 windmill sets remaining
+420 of 4095 windmill sets remaining
+421 of 4095 windmill sets remaining
+422 of 4095 windmill sets remaining
+423 of 4095 windmill sets remaining
+424 of 4095 windmill sets remaining
+425 of 4095 windmill sets remaining
+426 of 4095 windmill sets remaining
+427 of 4095 windmill sets remaining
+428 of 4095 windmill sets remaining
+429 of 4095 windmill sets remaining
+430 of 4095 windmill sets remaining
+431 of 4095 windmill sets remaining
+432 of 4095 windmill sets remaining
+433 of 4095 windmill sets remaining
+434 of 4095 windmill sets remaining
+435 of 4095 windmill sets remaining
+436 of 4095 windmill sets remaining
+437 of 4095 windmill sets remaining
+438 of 4095 windmill sets remaining
+439 of 4095 windmill sets remaining
+440 of 4095 windmill sets remaining
+441 of 4095 windmill sets remaining
+442 of 4095 windmill sets remaining
+443 of 4095 windmill sets remaining
+444 of 4095 windmill sets remaining
+445 of 4095 windmill sets remaining
+446 of 4095 windmill sets remaining
+447 of 4095 windmill sets remaining
+448 of 4095 windmill sets remaining
+449 of 4095 windmill sets remaining
+450 of 4095 windmill sets remaining
+451 of 4095 windmill sets remaining
+452 of 4095 windmill sets remaining
+453 of 4095 windmill sets remaining
+454 of 4095 windmill sets remaining
+455 of 4095 windmill sets remaining
+456 of 4095 windmill sets remaining
+457 of 4095 windmill sets remaining
+458 of 4095 windmill sets remaining
+459 of 4095 windmill sets remaining
+460 of 4095 windmill sets remaining
+461 of 4095 windmill sets remaining
+462 of 4095 windmill sets remaining
+463 of 4095 windmill sets remaining
+464 of 4095 windmill sets remaining
+465 of 4095 windmill sets remaining
+466 of 4095 windmill sets remaining
+467 of 4095 windmill sets remaining
+468 of 4095 windmill sets remaining
+469 of 4095 windmill sets remaining
+470 of 4095 windmill sets remaining
+471 of 4095 windmill sets remaining
+472 of 4095 windmill sets remaining
+473 of 4095 windmill sets remaining
+474 of 4095 windmill sets remaining
+475 of 4095 windmill sets remaining
+476 of 4095 windmill sets remaining
+477 of 4095 windmill sets remaining
+478 of 4095 windmill sets remaining
+479 of 4095 windmill sets remaining
+480 of 4095 windmill sets remaining
+481 of 4095 windmill sets remaining
+482 of 4095 windmill sets remaining
+483 of 4095 windmill sets remaining
+484 of 4095 windmill sets remaining
+485 of 4095 windmill sets remaining
+486 of 4095 windmill sets remaining
+487 of 4095 windmill sets remaining
+488 of 4095 windmill sets remaining
+489 of 4095 windmill sets remaining
+490 of 4095 windmill sets remaining
+491 of 4095 windmill sets remaining
+492 of 4095 windmill sets remaining
+493 of 4095 windmill sets remaining
+494 of 4095 windmill sets remaining
+495 of 4095 windmill sets remaining
+496 of 4095 windmill sets remaining
+497 of 4095 windmill sets remaining
+498 of 4095 windmill sets remaining
+499 of 4095 windmill sets remaining
+500 of 4095 windmill sets remaining
+501 of 4095 windmill sets remaining
+502 of 4095 windmill sets remaining
+503 of 4095 windmill sets remaining
+504 of 4095 windmill sets remaining
+505 of 4095 windmill sets remaining
+506 of 4095 windmill sets remaining
+507 of 4095 windmill sets remaining
+508 of 4095 windmill sets remaining
+509 of 4095 windmill sets remaining
+510 of 4095 windmill sets remaining
+511 of 4095 windmill sets remaining
+512 of 4095 windmill sets remaining
+513 of 4095 windmill sets remaining
+514 of 4095 windmill sets remaining
+515 of 4095 windmill sets remaining
+516 of 4095 windmill sets remaining
+517 of 4095 windmill sets remaining
+518 of 4095 windmill sets remaining
+519 of 4095 windmill sets remaining
+520 of 4095 windmill sets remaining
+521 of 4095 windmill sets remaining
+522 of 4095 windmill sets remaining
+523 of 4095 windmill sets remaining
+524 of 4095 windmill sets remaining
+525 of 4095 windmill sets remaining
+526 of 4095 windmill sets remaining
+527 of 4095 windmill sets remaining
+528 of 4095 windmill sets remaining
+529 of 4095 windmill sets remaining
+530 of 4095 windmill sets remaining
+531 of 4095 windmill sets remaining
+532 of 4095 windmill sets remaining
+533 of 4095 windmill sets remaining
+534 of 4095 windmill sets remaining
+535 of 4095 windmill sets remaining
+536 of 4095 windmill sets remaining
+537 of 4095 windmill sets remaining
+538 of 4095 windmill sets remaining
+539 of 4095 windmill sets remaining
+540 of 4095 windmill sets remaining
+541 of 4095 windmill sets remaining
+542 of 4095 windmill sets remaining
+543 of 4095 windmill sets remaining
+544 of 4095 windmill sets remaining
+545 of 4095 windmill sets remaining
+546 of 4095 windmill sets remaining
+547 of 4095 windmill sets remaining
+548 of 4095 windmill sets remaining
+549 of 4095 windmill sets remaining
+550 of 4095 windmill sets remaining
+551 of 4095 windmill sets remaining
+552 of 4095 windmill sets remaining
+553 of 4095 windmill sets remaining
+554 of 4095 windmill sets remaining
+555 of 4095 windmill sets remaining
+556 of 4095 windmill sets remaining
+557 of 4095 windmill sets remaining
+558 of 4095 windmill sets remaining
+559 of 4095 windmill sets remaining
+560 of 4095 windmill sets remaining
+561 of 4095 windmill sets remaining
+562 of 4095 windmill sets remaining
+563 of 4095 windmill sets remaining
+564 of 4095 windmill sets remaining
+565 of 4095 windmill sets remaining
+566 of 4095 windmill sets remaining
+567 of 4095 windmill sets remaining
+568 of 4095 windmill sets remaining
+569 of 4095 windmill sets remaining
+570 of 4095 windmill sets remaining
+571 of 4095 windmill sets remaining
+572 of 4095 windmill sets remaining
+573 of 4095 windmill sets remaining
+574 of 4095 windmill sets remaining
+575 of 4095 windmill sets remaining
+576 of 4095 windmill sets remaining
+577 of 4095 windmill sets remaining
+578 of 4095 windmill sets remaining
+579 of 4095 windmill sets remaining
+580 of 4095 windmill sets remaining
+581 of 4095 windmill sets remaining
+582 of 4095 windmill sets remaining
+583 of 4095 windmill sets remaining
+584 of 4095 windmill sets remaining
+585 of 4095 windmill sets remaining
+586 of 4095 windmill sets remaining
+587 of 4095 windmill sets remaining
+588 of 4095 windmill sets remaining
+589 of 4095 windmill sets remaining
+590 of 4095 windmill sets remaining
+591 of 4095 windmill sets remaining
+592 of 4095 windmill sets remaining
+593 of 4095 windmill sets remaining
+594 of 4095 windmill sets remaining
+595 of 4095 windmill sets remaining
+596 of 4095 windmill sets remaining
+597 of 4095 windmill sets remaining
+598 of 4095 windmill sets remaining
+599 of 4095 windmill sets remaining
+600 of 4095 windmill sets remaining
+601 of 4095 windmill sets remaining
+602 of 4095 windmill sets remaining
+603 of 4095 windmill sets remaining
+604 of 4095 windmill sets remaining
+605 of 4095 windmill sets remaining
+606 of 4095 windmill sets remaining
+607 of 4095 windmill sets remaining
+608 of 4095 windmill sets remaining
+609 of 4095 windmill sets remaining
+610 of 4095 windmill sets remaining
+611 of 4095 windmill sets remaining
+612 of 4095 windmill sets remaining
+613 of 4095 windmill sets remaining
+614 of 4095 windmill sets remaining
+615 of 4095 windmill sets remaining
+616 of 4095 windmill sets remaining
+617 of 4095 windmill sets remaining
+618 of 4095 windmill sets remaining
+619 of 4095 windmill sets remaining
+620 of 4095 windmill sets remaining
+621 of 4095 windmill sets remaining
+622 of 4095 windmill sets remaining
+623 of 4095 windmill sets remaining
+624 of 4095 windmill sets remaining
+625 of 4095 windmill sets remaining
+626 of 4095 windmill sets remaining
+627 of 4095 windmill sets remaining
+628 of 4095 windmill sets remaining
+629 of 4095 windmill sets remaining
+630 of 4095 windmill sets remaining
+631 of 4095 windmill sets remaining
+632 of 4095 windmill sets remaining
+633 of 4095 windmill sets remaining
+634 of 4095 windmill sets remaining
+635 of 4095 windmill sets remaining
+636 of 4095 windmill sets remaining
+637 of 4095 windmill sets remaining
+638 of 4095 windmill sets remaining
+639 of 4095 windmill sets remaining
+640 of 4095 windmill sets remaining
+641 of 4095 windmill sets remaining
+642 of 4095 windmill sets remaining
+643 of 4095 windmill sets remaining
+644 of 4095 windmill sets remaining
+645 of 4095 windmill sets remaining
+646 of 4095 windmill sets remaining
+647 of 4095 windmill sets remaining
+648 of 4095 windmill sets remaining
+649 of 4095 windmill sets remaining
+650 of 4095 windmill sets remaining
+651 of 4095 windmill sets remaining
+652 of 4095 windmill sets remaining
+653 of 4095 windmill sets remaining
+654 of 4095 windmill sets remaining
+655 of 4095 windmill sets remaining
+656 of 4095 windmill sets remaining
+657 of 4095 windmill sets remaining
+658 of 4095 windmill sets remaining
+659 of 4095 windmill sets remaining
+660 of 4095 windmill sets remaining
+661 of 4095 windmill sets remaining
+662 of 4095 windmill sets remaining
+663 of 4095 windmill sets remaining
+664 of 4095 windmill sets remaining
+665 of 4095 windmill sets remaining
+666 of 4095 windmill sets remaining
+667 of 4095 windmill sets remaining
+668 of 4095 windmill sets remaining
+669 of 4095 windmill sets remaining
+670 of 4095 windmill sets remaining
+671 of 4095 windmill sets remaining
+672 of 4095 windmill sets remaining
+673 of 4095 windmill sets remaining
+674 of 4095 windmill sets remaining
+675 of 4095 windmill sets remaining
+676 of 4095 windmill sets remaining
+677 of 4095 windmill sets remaining
+678 of 4095 windmill sets remaining
+679 of 4095 windmill sets remaining
+680 of 4095 windmill sets remaining
+681 of 4095 windmill sets remaining
+682 of 4095 windmill sets remaining
+683 of 4095 windmill sets remaining
+684 of 4095 windmill sets remaining
+685 of 4095 windmill sets remaining
+686 of 4095 windmill sets remaining
+687 of 4095 windmill sets remaining
+688 of 4095 windmill sets remaining
+689 of 4095 windmill sets remaining
+690 of 4095 windmill sets remaining
+691 of 4095 windmill sets remaining
+692 of 4095 windmill sets remaining
+693 of 4095 windmill sets remaining
+694 of 4095 windmill sets remaining
+695 of 4095 windmill sets remaining
+696 of 4095 windmill sets remaining
+697 of 4095 windmill sets remaining
+698 of 4095 windmill sets remaining
+699 of 4095 windmill sets remaining
+700 of 4095 windmill sets remaining
+701 of 4095 windmill sets remaining
+702 of 4095 windmill sets remaining
+703 of 4095 windmill sets remaining
+704 of 4095 windmill sets remaining
+705 of 4095 windmill sets remaining
+706 of 4095 windmill sets remaining
+707 of 4095 windmill sets remaining
+708 of 4095 windmill sets remaining
+709 of 4095 windmill sets remaining
+710 of 4095 windmill sets remaining
+711 of 4095 windmill sets remaining
+712 of 4095 windmill sets remaining
+713 of 4095 windmill sets remaining
+714 of 4095 windmill sets remaining
+715 of 4095 windmill sets remaining
+716 of 4095 windmill sets remaining
+717 of 4095 windmill sets remaining
+718 of 4095 windmill sets remaining
+719 of 4095 windmill sets remaining
+720 of 4095 windmill sets remaining
+721 of 4095 windmill sets remaining
+722 of 4095 windmill sets remaining
+723 of 4095 windmill sets remaining
+724 of 4095 windmill sets remaining
+725 of 4095 windmill sets remaining
+726 of 4095 windmill sets remaining
+727 of 4095 windmill sets remaining
+728 of 4095 windmill sets remaining
+729 of 4095 windmill sets remaining
+730 of 4095 windmill sets remaining
+731 of 4095 windmill sets remaining
+732 of 4095 windmill sets remaining
+733 of 4095 windmill sets remaining
+734 of 4095 windmill sets remaining
+735 of 4095 windmill sets remaining
+736 of 4095 windmill sets remaining
+737 of 4095 windmill sets remaining
+738 of 4095 windmill sets remaining
+739 of 4095 windmill sets remaining
+740 of 4095 windmill sets remaining
+741 of 4095 windmill sets remaining
+742 of 4095 windmill sets remaining
+743 of 4095 windmill sets remaining
+744 of 4095 windmill sets remaining
+745 of 4095 windmill sets remaining
+746 of 4095 windmill sets remaining
+747 of 4095 windmill sets remaining
+748 of 4095 windmill sets remaining
+749 of 4095 windmill sets remaining
+750 of 4095 windmill sets remaining
+751 of 4095 windmill sets remaining
+752 of 4095 windmill sets remaining
+753 of 4095 windmill sets remaining
+754 of 4095 windmill sets remaining
+755 of 4095 windmill sets remaining
+756 of 4095 windmill sets remaining
+757 of 4095 windmill sets remaining
+758 of 4095 windmill sets remaining
+759 of 4095 windmill sets remaining
+760 of 4095 windmill sets remaining
+761 of 4095 windmill sets remaining
+762 of 4095 windmill sets remaining
+763 of 4095 windmill sets remaining
+764 of 4095 windmill sets remaining
+765 of 4095 windmill sets remaining
+766 of 4095 windmill sets remaining
+767 of 4095 windmill sets remaining
+768 of 4095 windmill sets remaining
+769 of 4095 windmill sets remaining
+770 of 4095 windmill sets remaining
+771 of 4095 windmill sets remaining
+772 of 4095 windmill sets remaining
+773 of 4095 windmill sets remaining
+774 of 4095 windmill sets remaining
+775 of 4095 windmill sets remaining
+776 of 4095 windmill sets remaining
+777 of 4095 windmill sets remaining
+778 of 4095 windmill sets remaining
+779 of 4095 windmill sets remaining
+780 of 4095 windmill sets remaining
+781 of 4095 windmill sets remaining
+782 of 4095 windmill sets remaining
+783 of 4095 windmill sets remaining
+784 of 4095 windmill sets remaining
+785 of 4095 windmill sets remaining
+786 of 4095 windmill sets remaining
+787 of 4095 windmill sets remaining
+788 of 4095 windmill sets remaining
+789 of 4095 windmill sets remaining
+790 of 4095 windmill sets remaining
+791 of 4095 windmill sets remaining
+792 of 4095 windmill sets remaining
+793 of 4095 windmill sets remaining
+794 of 4095 windmill sets remaining
+795 of 4095 windmill sets remaining
+796 of 4095 windmill sets remaining
+797 of 4095 windmill sets remaining
+798 of 4095 windmill sets remaining
+799 of 4095 windmill sets remaining
+800 of 4095 windmill sets remaining
+801 of 4095 windmill sets remaining
+802 of 4095 windmill sets remaining
+803 of 4095 windmill sets remaining
+804 of 4095 windmill sets remaining
+805 of 4095 windmill sets remaining
+806 of 4095 windmill sets remaining
+807 of 4095 windmill sets remaining
+808 of 4095 windmill sets remaining
+809 of 4095 windmill sets remaining
+810 of 4095 windmill sets remaining
+811 of 4095 windmill sets remaining
+New best found: 18
+812 of 4095 windmill sets remaining
+813 of 4095 windmill sets remaining
+814 of 4095 windmill sets remaining
+815 of 4095 windmill sets remaining
+New best found: 19
+816 of 4095 windmill sets remaining
+817 of 4095 windmill sets remaining
+818 of 4095 windmill sets remaining
+819 of 4095 windmill sets remaining
+820 of 4095 windmill sets remaining
+821 of 4095 windmill sets remaining
+822 of 4095 windmill sets remaining
+823 of 4095 windmill sets remaining
+824 of 4095 windmill sets remaining
+825 of 4095 windmill sets remaining
+826 of 4095 windmill sets remaining
+827 of 4095 windmill sets remaining
+828 of 4095 windmill sets remaining
+829 of 4095 windmill sets remaining
+830 of 4095 windmill sets remaining
+831 of 4095 windmill sets remaining
+New best found: 20
+832 of 4095 windmill sets remaining
+833 of 4095 windmill sets remaining
+834 of 4095 windmill sets remaining
+835 of 4095 windmill sets remaining
+836 of 4095 windmill sets remaining
+837 of 4095 windmill sets remaining
+838 of 4095 windmill sets remaining
+839 of 4095 windmill sets remaining
+840 of 4095 windmill sets remaining
+841 of 4095 windmill sets remaining
+842 of 4095 windmill sets remaining
+843 of 4095 windmill sets remaining
+844 of 4095 windmill sets remaining
+845 of 4095 windmill sets remaining
+846 of 4095 windmill sets remaining
+847 of 4095 windmill sets remaining
+848 of 4095 windmill sets remaining
+849 of 4095 windmill sets remaining
+850 of 4095 windmill sets remaining
+851 of 4095 windmill sets remaining
+852 of 4095 windmill sets remaining
+853 of 4095 windmill sets remaining
+854 of 4095 windmill sets remaining
+855 of 4095 windmill sets remaining
+856 of 4095 windmill sets remaining
+857 of 4095 windmill sets remaining
+858 of 4095 windmill sets remaining
+859 of 4095 windmill sets remaining
+860 of 4095 windmill sets remaining
+861 of 4095 windmill sets remaining
+862 of 4095 windmill sets remaining
+863 of 4095 windmill sets remaining
+864 of 4095 windmill sets remaining
+865 of 4095 windmill sets remaining
+866 of 4095 windmill sets remaining
+867 of 4095 windmill sets remaining
+868 of 4095 windmill sets remaining
+869 of 4095 windmill sets remaining
+870 of 4095 windmill sets remaining
+871 of 4095 windmill sets remaining
+872 of 4095 windmill sets remaining
+873 of 4095 windmill sets remaining
+874 of 4095 windmill sets remaining
+875 of 4095 windmill sets remaining
+876 of 4095 windmill sets remaining
+877 of 4095 windmill sets remaining
+878 of 4095 windmill sets remaining
+879 of 4095 windmill sets remaining
+880 of 4095 windmill sets remaining
+881 of 4095 windmill sets remaining
+882 of 4095 windmill sets remaining
+883 of 4095 windmill sets remaining
+884 of 4095 windmill sets remaining
+885 of 4095 windmill sets remaining
+886 of 4095 windmill sets remaining
+887 of 4095 windmill sets remaining
